@@ -87,6 +87,12 @@
     font-size:0.95rem;
     margin-bottom:18px;
   }
+  .kicker-link{
+    color:inherit;text-decoration:none;
+    border-bottom:1px solid rgba(150,169,194,0.4);
+    transition:border-color .15s ease, color .15s ease;
+  }
+  .kicker-link:hover{color:var(--ink);border-color:var(--moon);}
   h1.title{
     font-size:clamp(2.6rem, 5.4vw, 4.4rem);
     font-weight:600;
@@ -250,7 +256,7 @@
   <div class="hero-scrim"></div>
   <div class="wrap hero-content">
     <div class="hero-text">
-      <div class="kicker">Bear Creek Lake Park &middot; Colorado</div>
+      <div class="kicker"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bear+Creek+Lake+Park+Lakewood+CO" target="_blank" rel="noopener" class="kicker-link">Bear Creek Lake Park &middot; Colorado</a></div>
       <h1 class="title">One loop.<br>Every hour.<br>Until <span class="ember-word">one</span> remains.</h1>
       <div class="badge-row">
         <span class="badge">Backyard Ultra &middot; Bear Creek Lake Park, CO</span>
