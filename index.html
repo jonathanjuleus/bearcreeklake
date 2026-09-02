@@ -191,16 +191,41 @@
   .detail-row .v{text-align:right;}
   .tbd{color:var(--ember);font-style:italic;}
 
-  /* ---------- Signup ---------- */
-  .signup-box{
+  /* ---------- Waiver & registration ---------- */
+  .waiver-box{
     background:var(--bg-1);
     border:1px solid var(--line);
-    padding:44px;
-    display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center;
+    padding:36px;
+    margin-bottom:32px;
   }
-  @media (max-width:760px){ .signup-box{grid-template-columns:1fr;padding:30px;} }
+  .waiver-box h3{
+    font-family:'Fraunces',serif;font-weight:500;font-size:1.25rem;margin-bottom:16px;
+  }
+  .waiver-text{
+    max-height:220px;overflow-y:auto;
+    padding-right:12px;
+    border-bottom:1px solid var(--line);
+    margin-bottom:14px;
+  }
+  .waiver-text p{color:var(--ink-dim);font-size:0.92rem;margin-bottom:12px;}
+  .waiver-text p:last-child{margin-bottom:0;}
+  .waiver-legal-note{color:var(--ember);font-size:0.8rem;font-style:italic;}
+
+  .waiver-form{
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    padding:36px;
+  }
+  .form-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    margin-bottom:24px;
+  }
+  .form-field{display:flex;flex-direction:column;gap:6px;}
+  .form-field label{font-size:0.85rem;color:var(--ink-dim);}
+  @media (max-width:640px){ .form-grid{grid-template-columns:1fr;} }
+
   form{display:flex;flex-direction:column;gap:12px;}
-  input[type="email"], input[type="text"]{
+  input[type="email"], input[type="text"], input[type="tel"]{
     background:var(--bg-0);
     border:1px solid var(--line);
     color:var(--ink);
@@ -212,6 +237,14 @@
   input:focus{outline:2px solid var(--moon);outline-offset:1px;}
   .form-note{font-size:0.82rem;color:var(--ink-dim);}
   #form-status{font-size:0.9rem;min-height:1.2em;color:var(--moon);}
+
+  .waiver-agree{
+    display:flex;align-items:flex-start;gap:10px;
+    font-size:0.92rem;color:var(--ink);
+    margin-bottom:20px;
+    cursor:pointer;
+  }
+  .waiver-agree input{margin-top:3px;}
 
   /* ---------- Footer ---------- */
   footer{
@@ -253,7 +286,7 @@
     </div>
     <div class="hero-actions">
       <div class="cta-row">
-        <a href="#STRIPE_PAYMENT_LINK" class="btn btn-primary" id="register-btn">Register: $65</a>
+        <a href="#signup" class="btn btn-primary" id="register-btn">Register: $65</a>
         <a href="#venue" class="btn btn-outline">See the venue</a>
       </div>
       <p class="form-note" style="margin-top:14px;">Only 50 spots. Also listed on RunSignUp and UltraSignUp, registration happens here.</p>
@@ -319,24 +352,57 @@
 
 <section id="signup">
   <div class="wrap">
-    <div class="signup-box">
-      <div>
-        <h2>Lock in your spot</h2>
-        <p class="lede" style="margin-top:10px;">$65 gets you one of 50 spots, covers timing and the aid station, and includes a short liability waiver at checkout. Registration is capped and closes automatically once it's full.</p>
-        <div class="cta-row" style="margin-top:24px;">
-          <a href="#STRIPE_PAYMENT_LINK" class="btn btn-primary" id="register-btn-2">Register: $65</a>
+    <div class="section-head">
+      <div class="kicker">Register</div>
+      <h2>Sign the waiver, then pay</h2>
+      <p class="lede">Fill this out once. After you submit, you'll be sent straight to payment. Both steps together lock in your spot.</p>
+    </div>
+
+    <div class="waiver-box">
+      <h3>Assumption of Risk &amp; Liability Waiver</h3>
+      <div class="waiver-text">
+        <p>I understand that participation in the 11th Hour Backyard Ultra involves inherent risks, including but not limited to physical injury, exposure to weather and terrain hazards, and risks associated with running at night. I voluntarily assume all such risks, known and unknown, in choosing to participate.</p>
+        <p>In consideration of being permitted to participate, I, for myself and my heirs, release and hold harmless the race organizer, Bear Creek Lake Park, the City of Lakewood, and their respective volunteers and staff from any and all claims, injuries, damages, or losses arising from my participation, except in cases of gross negligence.</p>
+        <p>I confirm that I am physically fit to participate and have not withheld any information about a condition that could affect my safety or the safety of others during the event. I understand that emergency medical care may be administered at the discretion of on-site staff based on the information I provide below.</p>
+      </div>
+      <p class="waiver-legal-note">This waiver is a general starting point and has not been reviewed by an attorney. Have it reviewed before race day.</p>
+    </div>
+
+    <form id="waiver-form" class="waiver-form" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="hidden" name="_subject" value="11th Hour Backyard Ultra — Waiver Submission">
+      <input type="hidden" name="_next" value="#STRIPE_PAYMENT_LINK">
+
+      <div class="form-grid">
+        <div class="form-field">
+          <label for="w-name">Full name</label>
+          <input type="text" id="w-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="w-email">Email</label>
+          <input type="email" id="w-email" name="email" required autocomplete="email">
+        </div>
+        <div class="form-field">
+          <label for="w-allergies">Allergies or medical conditions we should know about</label>
+          <input type="text" id="w-allergies" name="allergies" placeholder="None, or list them">
+        </div>
+        <div class="form-field">
+          <label for="w-ec-name">Emergency contact name</label>
+          <input type="text" id="w-ec-name" name="emergency_contact_name" required>
+        </div>
+        <div class="form-field">
+          <label for="w-ec-phone">Emergency contact phone</label>
+          <input type="tel" id="w-ec-phone" name="emergency_contact_phone" required>
         </div>
       </div>
-      <div>
-        <p class="form-note" style="margin-bottom:10px;">Not ready to pay yet? Leave your email and we'll ping you when registration opens.</p>
-        <form id="signup-form">
-          <input type="text" id="name" name="name" placeholder="Name" autocomplete="name">
-          <input type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
-          <button type="submit" class="btn btn-outline">Notify me</button>
-          <div id="form-status"></div>
-        </form>
-      </div>
-    </div>
+
+      <label class="waiver-agree">
+        <input type="checkbox" id="w-agree" name="waiver_agreed" required>
+        <span>I have read and agree to the waiver above.</span>
+      </label>
+
+      <button type="submit" class="btn btn-primary">Submit &amp; Continue to Payment</button>
+      <p class="form-note" style="margin-top:12px;">Only 50 spots. Also listed on RunSignUp and UltraSignUp, registration happens here.</p>
+    </form>
   </div>
 </section>
 
@@ -346,20 +412,6 @@
     <div>Starts 8:00 AM, October 31. Capped at 11 laps.</div>
   </div>
 </footer>
-
-<script>
-  // Placeholder submit handler; replace the fetch() target with your own
-  // email endpoint (e.g. a Google Form, Formspree, or Mailchimp signup URL).
-  document.getElementById('signup-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    const status = document.getElementById('form-status');
-    const email = document.getElementById('email').value;
-    if(!email){ return; }
-    // TODO: wire this up to your actual email collection service.
-    status.textContent = "Thanks, you're on the list.";
-    this.reset();
-  });
-</script>
 
 </body>
 </html>
