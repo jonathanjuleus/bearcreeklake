@@ -48,9 +48,15 @@
   }
   .nav-name{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:0.01em;}
   .nav-name .hour{color:var(--ember);}
-  nav .links{display:flex;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
+  nav .links{display:flex;align-items:center;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
   nav .links a{text-decoration:none;transition:color .15s;}
   nav .links a:hover{color:var(--ink);}
+  nav .links a.nav-btn{
+    background:var(--ember);color:#17110A;
+    padding:8px 16px;border-radius:3px;
+    font-weight:600;transition:background .15s ease;
+  }
+  nav .links a.nav-btn:hover{background:#E67E42;color:#17110A;}
   @media (max-width:640px){ nav .links{display:none;} }
 
   /* ---------- Hero ---------- */
@@ -238,8 +244,9 @@
   <div class="wrap">
     <div class="nav-name">11<span class="hour">th</span> Hour Backyard Ultra</div>
     <div class="links">
+      <a href="#register" class="nav-btn">Register</a>
       <a href="#venue">Venue</a>
-      <a href="#volunteer">Volunteer</a>
+      <a href="volunteer.html">Volunteer</a>
     </div>
   </div>
 </nav>
@@ -258,7 +265,7 @@
     </div>
     <div class="hero-actions">
       <div class="cta-row">
-        <a href="#venue" class="btn btn-primary">See the venue</a>
+        <a href="#" class="btn btn-primary">Register</a>
       </div>
     </div>
   </div>
@@ -320,48 +327,17 @@
   </div>
 </section>
 
-<section id="volunteer">
+<section id="register">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Volunteer</div>
-      <h2>Help run the 11th hour</h2>
-      <p class="lede">This race doesn't happen without volunteers. Pick a role and we'll follow up with details closer to race day.</p>
+      <div class="kicker">Join the race</div>
+      <h2>Ready for the 11th hour?</h2>
+      <p class="lede">Register to run, or sign up to help make it happen. Either way, we'll see you at Bear Creek Lake Park.</p>
     </div>
-
-    <form id="volunteer-form" class="vol-form" action="https://formspree.io/f/mgaeyapd" method="POST">
-      <input type="hidden" name="_subject" value="Volunteer Signup: Bear Creek Lake Park Backyard Ultra">
-
-      <div class="vol-grid">
-        <div class="vol-field">
-          <label for="v-name">Full name</label>
-          <input type="text" id="v-name" name="name" required autocomplete="name">
-        </div>
-        <div class="vol-field">
-          <label for="v-email">Email</label>
-          <input type="email" id="v-email" name="email" required autocomplete="email">
-        </div>
-        <div class="vol-field">
-          <label for="v-phone">Phone</label>
-          <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
-        </div>
-        <div class="vol-field">
-          <label for="v-type">Volunteer type</label>
-          <select id="v-type" name="volunteer_type" required>
-            <option value="" disabled selected>Choose a role</option>
-            <option value="Medical staff">Medical staff</option>
-            <option value="Food tent">Food tent</option>
-            <option value="Course marshal">Course marshal</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="vol-field" style="margin-bottom:24px;">
-        <label for="v-notes">Anything we should know? (optional)</label>
-        <textarea id="v-notes" name="notes" rows="3" placeholder="Relevant experience, availability, etc."></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
-    </form>
+    <div class="cta-row">
+      <a href="#" class="btn btn-primary">Register</a>
+      <a href="volunteer.html" class="btn btn-primary">Volunteer</a>
+    </div>
   </div>
 </section>
 
