@@ -191,6 +191,33 @@
   .detail-row .v{text-align:right;}
   .tbd{color:var(--ember);font-style:italic;}
 
+  /* ---------- Volunteer form ---------- */
+  .vol-form{
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    padding:36px;
+    max-width:720px;
+  }
+  .vol-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:20px;
+    margin-bottom:24px;
+  }
+  @media (max-width:640px){ .vol-grid{grid-template-columns:1fr;} }
+  .vol-field{display:flex;flex-direction:column;gap:6px;}
+  .vol-field label{font-size:0.85rem;color:var(--ink-dim);}
+  input[type="email"], input[type="text"], input[type="tel"], select, textarea{
+    background:var(--bg-0);
+    border:1px solid var(--line);
+    color:var(--ink);
+    padding:13px 14px;
+    font-family:'Public Sans',sans-serif;
+    font-size:0.95rem;
+    border-radius:3px;
+  }
+  select{appearance:auto;}
+  textarea{resize:vertical;width:100%;}
+  input:focus, select:focus, textarea:focus{outline:2px solid var(--moon);outline-offset:1px;}
+
   /* ---------- Footer ---------- */
   footer{
     border-top:1px solid var(--line);
@@ -212,6 +239,7 @@
     <div class="nav-name">11<span class="hour">th</span> Hour Backyard Ultra</div>
     <div class="links">
       <a href="#venue">Venue</a>
+      <a href="#volunteer">Volunteer</a>
     </div>
   </div>
 </nav>
@@ -289,6 +317,51 @@
         <div class="detail-row"><span class="k">Lap cutoff</span><span class="v">11 laps max, final lap starts 6:00 PM</span></div>
       </div>
     </div>
+  </div>
+</section>
+
+<section id="volunteer">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker">Volunteer</div>
+      <h2>Help run the 11th hour</h2>
+      <p class="lede">This race doesn't happen without volunteers. Pick a role and we'll follow up with details closer to race day.</p>
+    </div>
+
+    <form id="volunteer-form" class="vol-form" action="https://formspree.io/f/mgaeyapd" method="POST">
+      <input type="hidden" name="_subject" value="Volunteer Signup: Bear Creek Lake Park Backyard Ultra">
+
+      <div class="vol-grid">
+        <div class="vol-field">
+          <label for="v-name">Full name</label>
+          <input type="text" id="v-name" name="name" required autocomplete="name">
+        </div>
+        <div class="vol-field">
+          <label for="v-email">Email</label>
+          <input type="email" id="v-email" name="email" required autocomplete="email">
+        </div>
+        <div class="vol-field">
+          <label for="v-phone">Phone</label>
+          <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
+        </div>
+        <div class="vol-field">
+          <label for="v-type">Volunteer type</label>
+          <select id="v-type" name="volunteer_type" required>
+            <option value="" disabled selected>Choose a role</option>
+            <option value="Medical staff">Medical staff</option>
+            <option value="Food tent">Food tent</option>
+            <option value="Course marshal">Course marshal</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="vol-field" style="margin-bottom:24px;">
+        <label for="v-notes">Anything we should know? (optional)</label>
+        <textarea id="v-notes" name="notes" rows="3" placeholder="Relevant experience, availability, etc."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
+    </form>
   </div>
 </section>
 
