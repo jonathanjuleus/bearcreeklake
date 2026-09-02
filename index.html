@@ -181,8 +181,20 @@
   .lede{color:var(--ink-dim);margin-top:14px;font-size:1.05rem;max-width:56ch;}
 
   /* ---------- Format ---------- */
+  .format-callout{
+    background:var(--bg-1);
+    border:1px solid var(--ember);
+    border-left:4px solid var(--ember);
+    padding:32px 28px;
+    margin-bottom:32px;
+  }
+  .format-callout .n{
+    font-family:'Fraunces',serif;color:var(--ember);font-size:1.1rem;margin-bottom:10px;
+  }
+  .format-callout h3{font-size:1.3rem;font-weight:600;margin-bottom:10px;}
+  .format-callout p{color:var(--ink-dim);font-size:1.02rem;max-width:60ch;}
   .format-grid{
-    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
     background:var(--line);
     border:1px solid var(--line);
   }
@@ -308,16 +320,16 @@
       <p class="lede">Backyard ultra rules, run at Bear Creek Lake Park. No course record, no age-group awards, just the clock and who's still on the start line.</p>
       <p class="lede" style="margin-top:8px;">One wrinkle: the park closes in the evening, so this edition is capped at <strong>11 laps</strong>. The final lap starts at 6:00 PM. If the field is still standing at that point, the race ends there rather than running the true last-one-standing format to its natural conclusion.</p>
     </div>
+    <div class="format-callout">
+      <div class="n">Miss the gun</div>
+      <h3>You're done</h3>
+      <p>Fail to start the next loop on time, and your race is over. There's no partial credit, only a finish time recorded as your last completed loop.</p>
+    </div>
     <div class="format-grid">
       <div class="format-cell">
         <div class="n">Each hour</div>
         <h3>A new loop starts</h3>
         <p>Everyone still in the race lines up and runs the same 4.16-mile loop. Finish early, and the rest of the hour is yours to eat, sit, or dread the next one.</p>
-      </div>
-      <div class="format-cell">
-        <div class="n">Miss the gun</div>
-        <h3>You're done</h3>
-        <p>Fail to start the next loop on time, and your race is over. There's no partial credit, only a finish time recorded as your last completed loop.</p>
       </div>
       <div class="format-cell">
         <div class="n">Last one standing</div>
