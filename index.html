@@ -180,20 +180,6 @@
   }
   .lede{color:var(--ink-dim);margin-top:14px;font-size:1.05rem;max-width:56ch;}
 
-  /* ---------- Format ---------- */
-  .format-grid{
-    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  @media (max-width:760px){ .format-grid{grid-template-columns:1fr;} }
-  .format-cell{background:var(--bg-1);padding:32px 28px;}
-  .format-cell .n{
-    font-family:'Fraunces',serif;color:var(--ember);font-size:1.1rem;margin-bottom:10px;
-  }
-  .format-cell h3{font-size:1.15rem;font-weight:600;margin-bottom:10px;}
-  .format-cell p{color:var(--ink-dim);font-size:0.96rem;}
-
   /* ---------- Venue ---------- */
   .detail-list{border-top:1px solid var(--line);}
   .detail-row{
@@ -247,7 +233,6 @@
   <div class="wrap">
     <div class="nav-name">11<span class="hour">th</span> Hour</div>
     <div class="links">
-      <a href="#format">Format</a>
       <a href="#venue">Venue</a>
       <a href="#signup">Register</a>
     </div>
@@ -269,7 +254,7 @@
     <div class="hero-actions">
       <div class="cta-row">
         <a href="#STRIPE_PAYMENT_LINK" class="btn btn-primary" id="register-btn">Register: $65</a>
-        <a href="#format" class="btn btn-outline">See the format</a>
+        <a href="#venue" class="btn btn-outline">See the venue</a>
       </div>
       <p class="form-note" style="margin-top:14px;">Only 50 spots. Also listed on RunSignUp and UltraSignUp, registration happens here.</p>
     </div>
@@ -295,29 +280,6 @@
       <div class="fact">
         <div class="num">50 spots</div>
         <div class="label">$65 entry</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="format">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker">The Format</div>
-      <h2>Simple rules. Unforgiving math.</h2>
-      <p class="lede">Backyard ultra rules, run at Bear Creek Lake Park. No course record, no age-group awards, just the clock and who's still on the start line.</p>
-      <p class="lede" style="margin-top:8px;">One wrinkle: the park closes in the evening, so this edition is capped at <strong>11 laps</strong>. The final lap starts at 6:00 PM. If the field is still standing at that point, the race ends there rather than running the true last-one-standing format to its natural conclusion.</p>
-    </div>
-    <div class="format-grid">
-      <div class="format-cell">
-        <div class="n">Each hour</div>
-        <h3>A new loop starts</h3>
-        <p>Everyone still in the race lines up and runs the same 4.16-mile loop. Finish early, and the rest of the hour is yours to eat, sit, or dread the next one.</p>
-      </div>
-      <div class="format-cell">
-        <div class="n">Last one standing</div>
-        <h3>Wins outright</h3>
-        <p>The race only has an official finisher when exactly one runner completes a loop that no one else does. Everyone else is ranked by loops completed.</p>
       </div>
     </div>
   </div>
