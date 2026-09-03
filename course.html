@@ -188,6 +188,36 @@
 
   /* ---------- Venue ---------- */
   .detail-list{border-top:1px solid var(--line);}
+
+  /* ---------- Course map comparison ---------- */
+  .map-compare{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  @media (max-width:760px){ .map-compare{grid-template-columns:1fr;} }
+
+  .map-embed-wrap{
+    position:relative;
+    height:420px;
+    overflow:hidden;
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,0.1);
+  }
+  .map-embed-wrap iframe.alltrails{
+    position:absolute;
+    top:-58px;
+    left:0;
+    width:100%;
+    height:520px;
+    border:0;
+  }
+  .strava-embed-wrap{
+    border-radius:6px;
+    border:1px solid rgba(255,255,255,0.1);
+    overflow:hidden;
+    min-height:420px;
+  }
   .detail-row{
     display:flex;justify-content:space-between;gap:20px;
     padding:16px 0;border-bottom:1px solid var(--line);
@@ -267,18 +297,30 @@
     <div class="section-head">
       <div class="kicker">Course</div>
       <h2>One loop, every hour, on the hour</h2>
-      <p class="lede">Starting and finishing at Pelican Point, Bear Creek Lake Park. Explore the route below, or open it in AllTrails for turn-by-turn detail and a downloadable GPX.</p>
+      <p class="lede">Starting and finishing at Pelican Point, Bear Creek Lake Park. Two views of the same route below, or open either one directly for turn-by-turn detail and a downloadable GPX.</p>
     </div>
 
-    <div style="border:1px solid rgba(255,255,255,0.1);border-radius:6px;overflow:hidden;margin-bottom:32px;">
-      <iframe class="alltrails" src="https://www.alltrails.com/widget/map/pelican-point-21f1d92?u=i&amp;sh=hkumu5" width="100%" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="AllTrails: Bear Creek Lake Park Backyard Ultra Course"></iframe>
+    <div class="map-compare">
+      <div class="map-col">
+        <div class="map-embed-wrap">
+          <iframe class="alltrails" src="https://www.alltrails.com/widget/map/pelican-point-21f1d92?u=i&amp;sh=hkumu5" width="100%" height="520" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="AllTrails: Bear Creek Lake Park Backyard Ultra Course"></iframe>
+        </div>
+        <div class="cta-row" style="margin-top:16px;">
+          <a href="https://www.alltrails.com/explore/custom-routes/pelican-point-21f1d92" target="_blank" rel="noopener" class="btn btn-outline">Open in AllTrails</a>
+        </div>
+      </div>
+
+      <div class="map-col">
+        <div class="strava-embed-wrap">
+          <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3530607442631417900" data-style="standard" data-from-embed="false" data-token="3SkiLTenthU_lZop0CKR-X1NyLGUQKvXIoM4v4UXycU"></div>
+        </div>
+        <div class="cta-row" style="margin-top:16px;">
+          <a href="https://www.strava.com/routes/3530607442631417900" target="_blank" rel="noopener" class="btn btn-outline">Open in Strava</a>
+        </div>
+      </div>
     </div>
 
-    <div class="cta-row" style="margin-bottom:40px;">
-      <a href="https://www.alltrails.com/explore/custom-routes/pelican-point-21f1d92" target="_blank" rel="noopener" class="btn btn-outline">Open in AllTrails</a>
-    </div>
-
-    <div class="detail-list">
+    <div class="detail-list" style="margin-top:40px;">
       <div class="detail-row"><span class="k">Loop distance</span><span class="v">4.167 miles</span></div>
       <div class="detail-row"><span class="k">Starting point</span><span class="v">Pelican Point, Bear Creek Lake Park</span></div>
       <div class="detail-row"><span class="k">Surface</span><span class="v">Dirt and gravel park trail</span></div>
@@ -286,6 +328,8 @@
     </div>
   </div>
 </section>
+
+<script src="https://strava-embeds.com/embed.js"></script>
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;width:100%;">
