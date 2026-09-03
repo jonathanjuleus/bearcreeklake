@@ -194,23 +194,31 @@
     display:grid;
     grid-template-columns:1fr 1fr;
     gap:24px;
+    align-items:stretch;
   }
   @media (max-width:760px){ .map-compare{grid-template-columns:1fr;} }
 
-  .gaia-embed-wrap{
+  .map-col{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .gaia-embed-wrap, .strava-embed-wrap{
     border-radius:6px;
     border:1px solid rgba(255,255,255,0.1);
     overflow:hidden;
-    height:420px;
+    height:480px;
   }
   .gaia-embed-wrap iframe{
     display:block;
+    width:100%;
+    height:100%;
   }
   .strava-embed-wrap{
-    border-radius:6px;
-    border:1px solid rgba(255,255,255,0.1);
-    overflow:hidden;
-    min-height:420px;
+    overflow-y:auto;
+  }
+  .map-col .cta-row{
+    margin-top:16px;
   }
   .detail-row{
     display:flex;justify-content:space-between;gap:20px;
