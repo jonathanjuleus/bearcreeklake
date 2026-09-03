@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volunteer — 11th Hour Backyard Ultra: Bear Creek Lake Park</title>
-<meta name="description" content="Sign up to volunteer at the 11th Hour Backyard Ultra at Bear Creek Lake Park, Colorado, October 31.">
+<title>Course — Bear Creek Lake Park Backyard Ultra</title>
+<meta name="description" content="The 4.167-mile loop course for the Bear Creek Lake Park Backyard Ultra, starting and finishing at Pelican Point.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -48,9 +48,15 @@
   }
   .nav-name{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:0.01em;}
   .nav-name .hour{color:var(--ember);}
-  nav .links{display:flex;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
+  nav .links{display:flex;align-items:center;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
   nav .links a{text-decoration:none;transition:color .15s;}
   nav .links a:hover{color:var(--ink);}
+  nav .links a.nav-btn{
+    background:var(--ember);color:#17110A;
+    padding:8px 16px;border-radius:3px;
+    font-weight:600;transition:background .15s ease;
+  }
+  nav .links a.nav-btn:hover{background:#E67E42;color:#17110A;}
   @media (max-width:640px){ nav .links{display:none;} }
 
   /* ---------- Hero ---------- */
@@ -238,9 +244,10 @@
   <div class="wrap">
     <div class="nav-name"><a href="index.html" style="text-decoration:none;color:inherit;">11<span class="hour">th</span> Hour Backyard Ultra</a></div>
     <div class="links">
+      <a href="https://ultrasignup.com/register.aspx?did=143378" class="nav-btn">Register on UltraSignup</a>
       <a href="course.html">Course</a>
-      <a href="index.html#venue">Venue</a>
-      <a href="index.html">Home</a>
+      <a href="#venue">Venue</a>
+      <a href="volunteer.html">Volunteer</a>
     </div>
   </div>
 </nav>
@@ -250,53 +257,33 @@
   <div class="wrap hero-content" style="padding:120px 28px 40px;">
     <div class="hero-text">
       <div class="kicker"><a href="index.html" class="kicker-link">&larr; Back to race info</a></div>
-      <h1 class="title">Help run the <span class="ember-word">11th</span> hour.</h1>
+      <h1 class="title">The <span class="ember-word">4.167-mile</span> loop.</h1>
     </div>
   </div>
 </header>
 
-<section id="volunteer" style="border-top:none;">
+<section id="course" style="border-top:none;">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Volunteer</div>
-      <h2>Sign up to help</h2>
-      <p class="lede">This race doesn't happen without volunteers. Pick a role and we'll follow up with details closer to race day.</p>
+      <div class="kicker">Course</div>
+      <h2>One loop, every hour, on the hour</h2>
+      <p class="lede">Starting and finishing at Pelican Point, Bear Creek Lake Park. Explore the route below, or open it in AllTrails for turn-by-turn detail and a downloadable GPX.</p>
     </div>
 
-    <form id="volunteer-form" class="vol-form" action="https://formspree.io/f/mgaeyapd" method="POST">
-      <input type="hidden" name="_subject" value="Volunteer Signup: Bear Creek Lake Park Backyard Ultra">
+    <div style="border:1px solid rgba(255,255,255,0.1);border-radius:6px;overflow:hidden;margin-bottom:32px;">
+      <iframe class="alltrails" src="https://www.alltrails.com/widget/map/pelican-point-21f1d92?u=i&amp;sh=hkumu5" width="100%" height="480" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="AllTrails: Bear Creek Lake Park Backyard Ultra Course"></iframe>
+    </div>
 
-      <div class="vol-grid">
-        <div class="vol-field">
-          <label for="v-name">Full name</label>
-          <input type="text" id="v-name" name="name" required autocomplete="name">
-        </div>
-        <div class="vol-field">
-          <label for="v-email">Email</label>
-          <input type="email" id="v-email" name="email" required autocomplete="email">
-        </div>
-        <div class="vol-field">
-          <label for="v-phone">Phone</label>
-          <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
-        </div>
-        <div class="vol-field">
-          <label for="v-type">Volunteer type</label>
-          <select id="v-type" name="volunteer_type" required>
-            <option value="" disabled selected>Choose a role</option>
-            <option value="Medical staff">Medical staff</option>
-            <option value="Food tent">Food tent</option>
-            <option value="Course marshal">Course marshal</option>
-          </select>
-        </div>
-      </div>
+    <div class="cta-row" style="margin-bottom:40px;">
+      <a href="https://www.alltrails.com/explore/custom-routes/pelican-point-21f1d92" target="_blank" rel="noopener" class="btn btn-outline">Open in AllTrails</a>
+    </div>
 
-      <div class="vol-field" style="margin-bottom:24px;">
-        <label for="v-notes">Anything we should know? (optional)</label>
-        <textarea id="v-notes" name="notes" rows="3" placeholder="Relevant experience, availability, etc."></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
-    </form>
+    <div class="detail-list">
+      <div class="detail-row"><span class="k">Loop distance</span><span class="v">4.167 miles</span></div>
+      <div class="detail-row"><span class="k">Starting point</span><span class="v">Pelican Point, Bear Creek Lake Park</span></div>
+      <div class="detail-row"><span class="k">Surface</span><span class="v">Dirt and gravel park trail</span></div>
+      <div class="detail-row"><span class="k">Aid station</span><span class="v">At the start/finish, every lap</span></div>
+    </div>
   </div>
 </section>
 
