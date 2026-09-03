@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volunteer — 11th Hour Backyard Ultra: Bear Creek Lake Park</title>
-<meta name="description" content="Sign up to volunteer at the 11th Hour Backyard Ultra at Bear Creek Lake Park, Colorado, October 31.">
+<title>First Timers — Bear Creek Lake Park Backyard Ultra</title>
+<meta name="description" content="What to expect at your first backyard ultra: format, pacing, gear, and cutoffs for the Bear Creek Lake Park Backyard Ultra.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -48,9 +48,15 @@
   }
   .nav-name{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:0.01em;}
   .nav-name .hour{color:var(--ember);}
-  nav .links{display:flex;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
+  nav .links{display:flex;align-items:center;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
   nav .links a{text-decoration:none;transition:color .15s;}
   nav .links a:hover{color:var(--ink);}
+  nav .links a.nav-btn{
+    background:var(--ember);color:#17110A;
+    padding:8px 16px;border-radius:3px;
+    font-weight:600;transition:background .15s ease;
+  }
+  nav .links a.nav-btn:hover{background:#E67E42;color:#17110A;}
   @media (max-width:640px){ nav .links{display:none;} }
 
   /* ---------- Hero ---------- */
@@ -182,6 +188,54 @@
 
   /* ---------- Venue ---------- */
   .detail-list{border-top:1px solid var(--line);}
+
+  /* ---------- First timers ---------- */
+  .ft-block{
+    border-top:1px solid var(--line);
+    padding:32px 0;
+    max-width:760px;
+  }
+  .ft-block:last-child{border-bottom:1px solid var(--line);}
+  .ft-block h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.35rem;
+    color:var(--ink);
+    margin-bottom:12px;
+  }
+  .ft-block p{
+    color:var(--ink-dim);
+    line-height:1.65;
+    font-size:1rem;
+  }
+  .ft-block p strong{color:var(--ink);font-weight:600;}
+
+  .ladder-table{
+    width:100%;
+    max-width:420px;
+    border-collapse:collapse;
+    font-size:0.98rem;
+  }
+  .ladder-table th{
+    text-align:left;
+    color:var(--ink-dim);
+    font-weight:500;
+    font-size:0.8rem;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    padding:0 0 10px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .ladder-table td{
+    padding:9px 0;
+    border-bottom:1px solid var(--line);
+    color:var(--ink-dim);
+  }
+  .ladder-table td:first-child{width:80px;}
+  .ladder-table tr.ladder-ultra td{
+    color:var(--ember);
+    font-weight:600;
+  }
   .detail-row{
     display:flex;justify-content:space-between;gap:20px;
     padding:16px 0;border-bottom:1px solid var(--line);
@@ -238,10 +292,11 @@
   <div class="wrap">
     <div class="nav-name"><a href="index.html" style="text-decoration:none;color:inherit;">11<span class="hour">th</span> Hour Backyard Ultra</a></div>
     <div class="links">
+      <a href="https://ultrasignup.com/register.aspx?did=143378" class="nav-btn">Register on UltraSignup</a>
       <a href="course.html">Course</a>
       <a href="first-timers.html">First Timers</a>
       <a href="index.html#venue">Venue</a>
-      <a href="index.html">Home</a>
+      <a href="volunteer.html">Volunteer</a>
     </div>
   </div>
 </nav>
@@ -251,53 +306,68 @@
   <div class="wrap hero-content" style="padding:120px 28px 40px;">
     <div class="hero-text">
       <div class="kicker"><a href="index.html" class="kicker-link">&larr; Back to race info</a></div>
-      <h1 class="title">Help run the <span class="ember-word">11th</span> hour.</h1>
+      <h1 class="title">New to the <span class="ember-word">backyard</span>?</h1>
     </div>
   </div>
 </header>
 
-<section id="volunteer" style="border-top:none;">
+<section id="first-timers" style="border-top:none;">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Volunteer</div>
-      <h2>Sign up to help</h2>
-      <p class="lede">This race doesn't happen without volunteers. Pick a role and we'll follow up with details closer to race day.</p>
+      <div class="kicker">First Timers</div>
+      <h2>What to expect at your first backyard ultra</h2>
+      <p class="lede">The format is simple to explain and hard to run. Here's what you need to know before you're standing in the corral at 7:59 AM.</p>
     </div>
 
-    <form id="volunteer-form" class="vol-form" action="https://formspree.io/f/mgaeyapd" method="POST">
-      <input type="hidden" name="_subject" value="Volunteer Signup: Bear Creek Lake Park Backyard Ultra">
+    <div class="ft-block">
+      <h3>The format</h3>
+      <p>One 4.167-mile loop, once per hour, on the hour. Finish before the hour's up and you rest until the next start. Miss a cutoff, or don't start the next lap, and you're done, or the field is stopped by the course's hard cutoff.</p>
+    </div>
 
-      <div class="vol-grid">
-        <div class="vol-field">
-          <label for="v-name">Full name</label>
-          <input type="text" id="v-name" name="name" required autocomplete="name">
-        </div>
-        <div class="vol-field">
-          <label for="v-email">Email</label>
-          <input type="email" id="v-email" name="email" required autocomplete="email">
-        </div>
-        <div class="vol-field">
-          <label for="v-phone">Phone</label>
-          <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
-        </div>
-        <div class="vol-field">
-          <label for="v-type">Volunteer type</label>
-          <select id="v-type" name="volunteer_type" required>
-            <option value="" disabled selected>Choose a role</option>
-            <option value="Medical staff">Medical staff</option>
-            <option value="Food tent">Food tent</option>
-            <option value="Course marshal">Course marshal</option>
-          </select>
-        </div>
-      </div>
+    <div class="ft-block">
+      <h3>Timing and finishing</h3>
+      <p>Whatever time you save on your loop is your rest time in the corral, so refill and eat fast. To count as a finisher you have to be caught by the clock: dropping mid-lap scores as a DNF, but completing a lap and choosing to stop still counts as that many laps finished.</p>
+    </div>
 
-      <div class="vol-field" style="margin-bottom:24px;">
-        <label for="v-notes">Anything we should know? (optional)</label>
-        <textarea id="v-notes" name="notes" rows="3" placeholder="Relevant experience, availability, etc."></textarea>
-      </div>
+    <div class="ft-block">
+      <h3>Course and cutoff</h3>
+      <p>The loop starts and finishes at Pelican Point on a dirt and gravel park trail, with one aid station at the start/finish. Because the park has posted closing hours, the final lap starts at 6:00 PM, capping the race at 11 laps (about 45.8 miles).</p>
+    </div>
 
-      <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
-    </form>
+    <div class="ft-block">
+      <h3>Mileage ladder</h3>
+      <p style="margin-bottom:20px;">What each completed lap adds up to over the day.</p>
+      <table class="ladder-table">
+        <thead>
+          <tr><th>Yards</th><th>Distance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>4.17 mi</td></tr>
+          <tr><td>2</td><td>8.33 mi</td></tr>
+          <tr><td>3</td><td>12.50 mi</td></tr>
+          <tr><td>4</td><td>16.67 mi</td></tr>
+          <tr><td>5</td><td>20.83 mi</td></tr>
+          <tr><td>6</td><td>25.00 mi</td></tr>
+          <tr class="ladder-ultra"><td>7</td><td>29.17 mi &mdash; ULTRA!</td></tr>
+          <tr><td>8</td><td>33.33 mi</td></tr>
+          <tr><td>9</td><td>37.50 mi</td></tr>
+          <tr><td>10</td><td>41.67 mi</td></tr>
+          <tr><td>11</td><td>45.83 mi</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ft-block">
+      <h3>Gear and pacing</h3>
+      <p>You'll pass a fully stocked aid station every lap, so this isn't a self-sufficient ultra. Bring layers for a cold start and a headlamp for laps after dark. Run your loops at a comfortable, repeatable pace: the race rewards runners who can hold steady effort for hours, not the fastest single lap.</p>
+    </div>
+
+    <div class="ft-block">
+      <h3>Questions we get a lot</h3>
+      <p><strong>Crew or pacers on course?</strong> Still being finalized — check back closer to race day.<br>
+      <strong>Minimum laps to "count"?</strong> No minimum to participate, though under 6 laps isn't typically considered a qualifying finish.</p>
+    </div>
+
   </div>
 </section>
 
