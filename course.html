@@ -197,20 +197,14 @@
   }
   @media (max-width:760px){ .map-compare{grid-template-columns:1fr;} }
 
-  .map-embed-wrap{
-    position:relative;
-    height:420px;
-    overflow:hidden;
+  .gaia-embed-wrap{
     border-radius:6px;
     border:1px solid rgba(255,255,255,0.1);
+    overflow:hidden;
+    height:420px;
   }
-  .map-embed-wrap iframe.alltrails{
-    position:absolute;
-    top:-58px;
-    left:0;
-    width:100%;
-    height:520px;
-    border:0;
+  .gaia-embed-wrap iframe{
+    display:block;
   }
   .strava-embed-wrap{
     border-radius:6px;
@@ -302,11 +296,11 @@
 
     <div class="map-compare">
       <div class="map-col">
-        <div class="map-embed-wrap">
-          <iframe class="alltrails" src="https://www.alltrails.com/widget/map/pelican-point-21f1d92?u=i&amp;sh=hkumu5" width="100%" height="520" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="AllTrails: Bear Creek Lake Park Backyard Ultra Course"></iframe>
+        <div class="gaia-embed-wrap">
+          <iframe src="https://www.gaiagps.com/public/FeYXf79ZqcdnjNDDGU8sdZDZ/?embed=True" style="border:none; overflow-y: hidden; background-color:white; width:100%; height: 420px;" seamless></iframe>
         </div>
         <div class="cta-row" style="margin-top:16px;">
-          <a href="https://www.alltrails.com/explore/custom-routes/pelican-point-21f1d92" target="_blank" rel="noopener" class="btn btn-outline">Open in AllTrails</a>
+          <a href="https://www.gaiagps.com/public/FeYXf79ZqcdnjNDDGU8sdZDZ/" target="_blank" rel="noopener" class="btn btn-outline">Open in Gaia GPS</a>
         </div>
       </div>
 
