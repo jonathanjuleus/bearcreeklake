@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/qr",
+      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=launch_ad",
+      "permanent": false
+    }
+  ]
+}
