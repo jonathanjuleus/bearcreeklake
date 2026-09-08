@@ -240,6 +240,18 @@
   select{appearance:auto;}
   textarea{resize:vertical;width:100%;}
   input:focus, select:focus, textarea:focus{outline:2px solid var(--moon);outline-offset:1px;}
+  .vol-checkboxes{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;}
+  @media (max-width:640px){ .vol-checkboxes{grid-template-columns:1fr;} }
+  .vol-checkbox-item{
+    display:flex;align-items:center;gap:9px;
+    font-size:0.95rem;color:var(--ink);
+    cursor:pointer;
+  }
+  .vol-checkbox-item input[type="checkbox"]{
+    accent-color:var(--ember);
+    width:17px;height:17px;
+    cursor:pointer;
+  }
 
   /* ---------- Footer ---------- */
   footer{
@@ -310,16 +322,18 @@
           <label for="v-phone">Phone</label>
           <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
         </div>
-        <div class="vol-field">
-          <label for="v-type">Volunteer type</label>
-          <select id="v-type" name="volunteer_type" required>
-            <option value="" disabled selected>Choose a role</option>
-            <option value="Medical staff">Medical staff</option>
-            <option value="Food tent">Food tent</option>
-            <option value="Course marshal">Course marshal</option>
-          </select>
-        </div>
       </div>
+
+      <fieldset class="vol-field" id="v-type-group" style="margin-bottom:24px;border:none;padding:0;">
+        <legend style="font-size:0.85rem;color:var(--ink-dim);padding:0;margin-bottom:10px;">Volunteer role(s) — select all that apply</legend>
+        <div class="vol-checkboxes">
+          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Medical staff"> Medical staff</label>
+          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Food tent"> Food tent</label>
+          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Course marshal"> Course marshal</label>
+          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Event setup"> Event setup</label>
+          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Event breakdown"> Event breakdown</label>
+        </div>
+      </fieldset>
 
       <div class="vol-field" style="margin-bottom:24px;">
         <label for="v-notes">Anything we should know? (optional)</label>
@@ -348,7 +362,13 @@
   });
   var volForm = document.getElementById('volunteer-form');
   if (volForm) {
-    volForm.addEventListener('submit', function(){
+    volForm.addEventListener('submit', function(e){
+      var checked = volForm.querySelectorAll('input[name="volunteer_type[]"]:checked');
+      if (checked.length === 0) {
+        e.preventDefault();
+        alert('Please select at least one volunteer role.');
+        return;
+      }
       if (window.mixpanel) {
         mixpanel.track('Volunteer Form Submitted', {}, {transport: 'sendBeacon'});
       }
