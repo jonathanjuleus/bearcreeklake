@@ -4,6 +4,26 @@
       "source": "/qr",
       "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=launch_ad",
       "permanent": false
+    },
+    {
+      "source": "/qr-washpark",
+      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=wash_park",
+      "permanent": false
+    },
+    {
+      "source": "/qr-sloanslake",
+      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=sloans_lake",
+      "permanent": false
+    },
+    {
+      "source": "/qr-bearcreek",
+      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=bear_creek",
+      "permanent": false
+    },
+    {
+      "source": "/qr-citypark",
+      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=city_park",
+      "permanent": false
     }
   ]
 }
