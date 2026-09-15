@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://bearcreekbackyardultra.com/volunteer.html">
-<title>Volunteer — 11th Hour Backyard Ultra: Bear Creek Lake Park</title>
-<meta name="description" content="Sign up to volunteer at the 11th Hour Backyard Ultra at Bear Creek Lake Park, Colorado, October 31.">
+<link rel="canonical" href="https://bearcreekbackyardultra.com/refund.html">
+<title>Refund Policy — Bear Creek Lake Park Backyard Ultra</title>
+<meta name="description" content="Refund policy for the 11th Hour Backyard Ultra, including the Pregnancy & Postpartum Policy for registered participants.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Volunteer — 11th Hour Backyard Ultra: Bear Creek Lake Park">
-<meta property="og:description" content="Sign up to volunteer at the 11th Hour Backyard Ultra at Bear Creek Lake Park, Colorado, October 31.">
+<meta property="og:title" content="Refund Policy — Bear Creek Lake Park Backyard Ultra">
+<meta property="og:description" content="Refund policy for the 11th Hour Backyard Ultra, including the Pregnancy & Postpartum Policy for registered participants.">
 <meta property="og:image" content="https://bearcreekbackyardultra.com/images/og-image.jpg">
-<meta property="og:url" content="https://bearcreekbackyardultra.com/volunteer.html">
+<meta property="og:url" content="https://bearcreekbackyardultra.com/refund.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Volunteer — 11th Hour Backyard Ultra: Bear Creek Lake Park">
-<meta name="twitter:description" content="Sign up to volunteer at the 11th Hour Backyard Ultra at Bear Creek Lake Park, Colorado, October 31.">
+<meta name="twitter:title" content="Refund Policy — Bear Creek Lake Park Backyard Ultra">
+<meta name="twitter:description" content="Refund policy for the 11th Hour Backyard Ultra, including the Pregnancy & Postpartum Policy for registered participants.">
 <meta name="twitter:image" content="https://bearcreekbackyardultra.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,9 +58,15 @@
   }
   .nav-name{font-family:'Fraunces',serif;font-size:1.05rem;letter-spacing:0.01em;}
   .nav-name .hour{color:var(--ember);}
-  nav .links{display:flex;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
+  nav .links{display:flex;align-items:center;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
   nav .links a{text-decoration:none;transition:color .15s;}
   nav .links a:hover{color:var(--ink);}
+  nav .links a.nav-btn{
+    background:var(--ember);color:#17110A;
+    padding:8px 16px;border-radius:3px;
+    font-weight:600;transition:background .15s ease;
+  }
+  nav .links a.nav-btn:hover{background:#E67E42;color:#17110A;}
   .nav-toggle{display:none;background:none;border:none;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;padding:6px 4px;}
   @media (max-width:640px){
     .nav-toggle{display:block;}
@@ -175,16 +181,25 @@
     border:1px solid var(--line);
   }
   .motion-video{
-    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;
+    display:block;width:100%;height:100%;object-fit:cover;object-position:center;
     filter:contrast(1.05) brightness(0.82) saturate(0.9);
+    transition:filter .25s ease, transform .25s ease;
+  }
+  .motion-link{
+    position:absolute;top:0;right:0;bottom:0;left:0;display:block;cursor:pointer;
+  }
+  .motion-link:hover .motion-video{
+    filter:contrast(1.05) brightness(0.92) saturate(1);
+    transform:scale(1.02);
   }
   .motion-overlay{
-    position:absolute;inset:0;
+    position:absolute;top:0;right:0;bottom:0;left:0;
+    pointer-events:none;
     background:
       linear-gradient(0deg, var(--bg-0) 0%, rgba(18,20,28,0.15) 40%, rgba(18,20,28,0.55) 100%),
       linear-gradient(100deg, rgba(219,107,44,0.28) 0%, rgba(18,20,28,0) 55%);
   }
-  .motion-caption{position:absolute;left:0;right:0;bottom:0;padding:0 28px 28px;}
+  .motion-caption{position:absolute;left:0;right:0;bottom:0;padding:0 28px 28px;pointer-events:none;}
   .motion-caption p{
     font-family:'Fraunces',serif;font-style:italic;font-weight:500;
     font-size:clamp(1.3rem,2.6vw,1.9rem);color:var(--ink);
@@ -206,6 +221,45 @@
 
   /* ---------- Venue ---------- */
   .detail-list{border-top:1px solid var(--line);}
+
+  /* ---------- Content blocks (director / first-timers style) ---------- */
+  .ft-block{
+    border-top:1px solid var(--line);
+    padding:32px 0;
+    max-width:760px;
+  }
+  .ft-block:last-child{border-bottom:1px solid var(--line);}
+  .ft-block h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.35rem;
+    color:var(--ink);
+    margin-bottom:12px;
+  }
+  .ft-block p{
+    color:var(--ink-dim);
+    line-height:1.65;
+    font-size:1rem;
+  }
+  .ft-block p strong{color:var(--ink);font-weight:600;}
+  .ft-block a{color:var(--ember);}
+
+  .director-photo{
+    margin-bottom:24px;
+    max-width:360px;
+  }
+  .director-photo img{
+    display:block;
+    width:100%;
+    border-radius:4px;
+    border:1px solid var(--line);
+  }
+  .director-photo-caption{
+    margin-top:10px;
+    font-size:0.88rem;
+    font-style:italic;
+    color:var(--ink-dim);
+  }
   .detail-row{
     display:flex;justify-content:space-between;gap:20px;
     padding:16px 0;border-bottom:1px solid var(--line);
@@ -241,18 +295,6 @@
   select{appearance:auto;}
   textarea{resize:vertical;width:100%;}
   input:focus, select:focus, textarea:focus{outline:2px solid var(--moon);outline-offset:1px;}
-  .vol-checkboxes{display:grid;grid-template-columns:1fr 1fr;gap:10px 20px;}
-  @media (max-width:640px){ .vol-checkboxes{grid-template-columns:1fr;} }
-  .vol-checkbox-item{
-    display:flex;align-items:center;gap:9px;
-    font-size:0.95rem;color:var(--ink);
-    cursor:pointer;
-  }
-  .vol-checkbox-item input[type="checkbox"]{
-    accent-color:var(--ember);
-    width:17px;height:17px;
-    cursor:pointer;
-  }
 
   /* ---------- Footer ---------- */
   footer{
@@ -267,12 +309,8 @@
     *{transition:none !important;}
   }
 </style>
-<script type="text/javascript">
-  (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-  for(h=0;h<i.length;h++)g(a,i[h]);var j="set set_once union unset remove delete".split(" ");a.get_group=function(){function b(c){d[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var d={},e=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<j.length;c++)b(j[c]);return d};b._i.push([e,f,c])};b.__SV=1.2;e=f.createElement("script");e.type="text/javascript";e.async=!0;e.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===f.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";g=f.getElementsByTagName("script")[0];g.parentNode.insertBefore(e,g)}})(document,window.mixpanel||[]);
-  mixpanel.init("bf3570ccc4b032d162b0415eda281a30", {track_pageview: true, persistence: "localStorage"});
-</script>
 </head>
+
 <body>
 
 <nav>
@@ -289,60 +327,63 @@
   </div>
 </nav>
 
+
 <header class="hero-outer" style="min-height:auto;">
   <div class="hero-scrim"></div>
   <div class="wrap hero-content" style="padding:120px 28px 40px;">
     <div class="hero-text">
       <div class="kicker"><a href="index.html" class="kicker-link">&larr; Back to race info</a></div>
-      <h1 class="title">Help run the <span class="ember-word">11th</span> hour.</h1>
+      <h1 class="title">Refund <span class="ember-word">policy</span></h1>
     </div>
   </div>
 </header>
 
-<section id="volunteer" style="border-top:none;">
+<section id="refund" style="border-top:none;">
   <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Volunteer</div>
-      <h2>Sign up to help</h2>
-      <p class="lede">This race doesn't happen without volunteers. Pick a role and we'll follow up with details closer to race day.</p>
+      <div class="kicker">Refund Policy</div>
+      <p class="lede">Race registrations are non-refundable, with one exception for pregnancy and postpartum circumstances.</p>
     </div>
 
-    <form id="volunteer-form" class="vol-form" action="https://formspree.io/f/mgaeyapd" method="POST">
-      <input type="hidden" name="_subject" value="Volunteer Signup: Bear Creek Lake Park Backyard Ultra">
+    <div class="ft-block">
+      <p>Race registrations are non-refundable. Once you register for the Bear Creek Backyard Ultra, your entry fee will not be refunded if you are unable to participate due to injury, illness, scheduling conflicts, travel issues, changes in plans, or other personal circumstances.</p>
+    </div>
 
-      <div class="vol-grid">
-        <div class="vol-field">
-          <label for="v-name">Full name</label>
-          <input type="text" id="v-name" name="name" required autocomplete="name">
-        </div>
-        <div class="vol-field">
-          <label for="v-email">Email</label>
-          <input type="email" id="v-email" name="email" required autocomplete="email">
-        </div>
-        <div class="vol-field">
-          <label for="v-phone">Phone</label>
-          <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
-        </div>
-      </div>
+    <div class="ft-block">
+      <p>Putting on a trail race requires us to make financial commitments well in advance of race day, and this policy helps us keep our entry fee as affordable as possible for all runners.</p>
+    </div>
 
-      <fieldset class="vol-field" id="v-type-group" style="margin-bottom:24px;border:none;padding:0;">
-        <legend style="font-size:0.85rem;color:var(--ink-dim);padding:0;margin-bottom:10px;">Volunteer role(s) — select all that apply</legend>
-        <div class="vol-checkboxes">
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Medical staff"> Medical staff</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Food tent"> Food tent</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Course marshal"> Course marshal</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Event setup"> Event setup</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Event breakdown"> Event breakdown</label>
-        </div>
-      </fieldset>
+    <div class="ft-block">
+      <p>The sole exception to this policy is our Pregnancy &amp; Postpartum Policy below.</p>
+    </div>
 
-      <div class="vol-field" style="margin-bottom:24px;">
-        <label for="v-notes">Anything we should know? (optional)</label>
-        <textarea id="v-notes" name="notes" rows="3" placeholder="Relevant experience, availability, etc."></textarea>
-      </div>
+    <div class="section-head" style="margin-top:8px;">
+      <div class="kicker">Pregnancy &amp; Postpartum Policy</div>
+    </div>
 
-      <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
-    </form>
+    <div class="ft-block">
+      <p>Bear Creek Backyard Ultra is committed to supporting women in trail and ultrarunning and follows the Trail Sisters Pregnancy &amp; Postpartum standard.</p>
+    </div>
+
+    <div class="ft-block">
+      <p>If a registered participant is unable or chooses not to participate because of pregnancy, pregnancy loss, or postpartum recovery, she may choose one of the following options:</p>
+      <p><strong>1. Refund:</strong> Receive a refund of the race entry fee paid to Bear Creek Backyard Ultra. Non-refundable third-party registration or processing fees are not included.</p>
+      <p><strong>2. Future Race Entry:</strong> Receive a complimentary entry to a future Bear Creek Backyard Ultra held within two years of the original race date. The entry is non-transferable, has no cash value, and is subject to the future race taking place and registration being offered.</p>
+    </div>
+
+    <div class="ft-block">
+      <p>This policy applies whether the pregnancy was planned or unplanned and whether there was an expected or unexpected start or end to the pregnancy. We recognize that pregnancy, pregnancy loss, childbirth, and postpartum recovery are deeply personal experiences and that every runner's timeline for returning to running is different.</p>
+    </div>
+
+    <div class="ft-block">
+      <p>Requests may be made at any time prior to the start of the race. No medical documentation is required.</p>
+    </div>
+
+    <div class="ft-block">
+      <h3>How to request</h3>
+      <p>To request a pregnancy or postpartum refund or future race entry, please contact the Race Directors through our website. Find <a href="https://www.instagram.com/bearcreekbackyardultra" style="color:var(--ember);">@bearcreekbackyardultra</a> on Instagram, or reach out through the UltraSignup listing.</p>
+    </div>
+
   </div>
 </section>
 
@@ -354,28 +395,6 @@
   </div>
 </footer>
 
-<script>
-  document.querySelectorAll('a[data-mp-loc]').forEach(function(el){
-    el.addEventListener('click', function(){
-      if (window.mixpanel) {
-        mixpanel.track('Register Click', {location: el.getAttribute('data-mp-loc'), page: location.pathname});
-      }
-    });
-  });
-  var volForm = document.getElementById('volunteer-form');
-  if (volForm) {
-    volForm.addEventListener('submit', function(e){
-      var checked = volForm.querySelectorAll('input[name="volunteer_type[]"]:checked');
-      if (checked.length === 0) {
-        e.preventDefault();
-        alert('Please select at least one volunteer role.');
-        return;
-      }
-      if (window.mixpanel) {
-        mixpanel.track('Volunteer Form Submitted', {}, {transport: 'sendBeacon'});
-      }
-    });
-  }
-</script>
+
 </body>
 </html>
