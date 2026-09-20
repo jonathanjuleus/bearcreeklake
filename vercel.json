@@ -24,6 +24,11 @@
       "source": "/qr-citypark",
       "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=city_park",
       "permanent": false
+    },
+    {
+      "source": "/qr-clearcreek",
+      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=clear_creek",
+      "permanent": false
     }
   ]
 }
