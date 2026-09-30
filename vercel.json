@@ -30,5 +30,11 @@
       "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=clear_creek",
       "permanent": false
     }
+  ],
+  "rewrites": [
+    {
+      "source": "/ig",
+      "destination": "/ig-redirect.html"
+    }
   ]
 }
