@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://bearcreekbackyardultra.com/">
-<title>11th Hour Backyard Ultra: Bear Creek Lake Park</title>
-<meta name="description" content="A backyard ultra at Bear Creek Lake Park, Colorado. One 4.167-mile loop, every hour, until one runner remains. October 31.">
+<link rel="canonical" href="https://bearcreekbackyardultra.com/sponsors.html">
+<title>Sponsors — Bear Creek Lake Park Backyard Ultra</title>
+<meta name="description" content="Sponsor the 11th Hour Backyard Ultra at Bear Creek Lake Park: a first-year, 50-runner race with a $60 entry. See what we're looking for and what sponsors get.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="11th Hour Backyard Ultra: Bear Creek Lake Park">
-<meta property="og:description" content="A backyard ultra at Bear Creek Lake Park, Colorado. One 4.167-mile loop, every hour, until one runner remains. October 31.">
+<meta property="og:title" content="Sponsors — Bear Creek Lake Park Backyard Ultra">
+<meta property="og:description" content="Sponsor the 11th Hour Backyard Ultra at Bear Creek Lake Park: a first-year, 50-runner race with a $60 entry. See what we're looking for and what sponsors get.">
 <meta property="og:image" content="https://bearcreekbackyardultra.com/images/og-image.jpg">
-<meta property="og:url" content="https://bearcreekbackyardultra.com/">
+<meta property="og:url" content="https://bearcreekbackyardultra.com/sponsors.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="11th Hour Backyard Ultra: Bear Creek Lake Park">
-<meta name="twitter:description" content="A backyard ultra at Bear Creek Lake Park, Colorado. One 4.167-mile loop, every hour, until one runner remains. October 31.">
+<meta name="twitter:title" content="Sponsors — Bear Creek Lake Park Backyard Ultra">
+<meta name="twitter:description" content="Sponsor the 11th Hour Backyard Ultra at Bear Creek Lake Park: a first-year, 50-runner race with a $60 entry. See what we're looking for and what sponsors get.">
 <meta name="twitter:image" content="https://bearcreekbackyardultra.com/images/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -221,6 +221,45 @@
 
   /* ---------- Venue ---------- */
   .detail-list{border-top:1px solid var(--line);}
+
+  /* ---------- Content blocks (director / first-timers style) ---------- */
+  .ft-block{
+    border-top:1px solid var(--line);
+    padding:32px 0;
+    max-width:760px;
+  }
+  .ft-block:last-child{border-bottom:1px solid var(--line);}
+  .ft-block h3{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:1.35rem;
+    color:var(--ink);
+    margin-bottom:12px;
+  }
+  .ft-block p{
+    color:var(--ink-dim);
+    line-height:1.65;
+    font-size:1rem;
+  }
+  .ft-block p strong{color:var(--ink);font-weight:600;}
+  .ft-block a{color:var(--ember);}
+
+  .director-photo{
+    margin-bottom:24px;
+    max-width:360px;
+  }
+  .director-photo img{
+    display:block;
+    width:100%;
+    border-radius:4px;
+    border:1px solid var(--line);
+  }
+  .director-photo-caption{
+    margin-top:10px;
+    font-size:0.88rem;
+    font-style:italic;
+    color:var(--ink-dim);
+  }
   .detail-row{
     display:flex;justify-content:space-between;gap:20px;
     padding:16px 0;border-bottom:1px solid var(--line);
@@ -269,6 +308,32 @@
     html{scroll-behavior:auto;}
     *{transition:none !important;}
   }
+
+  /* ---------- Sponsors page ---------- */
+  .hero-text{max-width:900px;}
+  .sponsor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;max-width:900px;}
+  .sponsor-slot{
+    border:1px dashed var(--line);border-radius:6px;
+    padding:34px 20px;min-height:150px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+    text-align:center;text-decoration:none;color:var(--ink-dim);
+    transition:border-color .15s ease;
+  }
+  .sponsor-slot:hover{border-color:var(--ember);}
+  .sponsor-slot .big{font-family:'Fraunces',serif;font-weight:600;font-size:1.2rem;color:var(--ink);}
+  .sponsor-slot .small{font-size:0.9rem;}
+  .sponsor-card{
+    border:1px solid var(--line);background:var(--bg-1);border-radius:6px;
+    padding:28px 20px;min-height:150px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .sponsor-card img{max-width:100%;max-height:80px;display:block;}
+  .perk-list{list-style:none;padding:0;margin:0;display:grid;gap:14px;}
+  .perk-list li{position:relative;padding-left:24px;color:var(--ink-dim);line-height:1.6;font-size:1rem;}
+  .perk-list li::before{content:"";position:absolute;left:0;top:0.78em;width:12px;height:2px;background:var(--ember);}
+  .perk-list li strong{color:var(--ink);font-weight:600;}
+  .ft-block a.btn-primary{color:#17110A;}
+  .ft-block a.btn-outline{color:var(--ink);}
 </style>
 <script type="text/javascript">
   (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
@@ -286,47 +351,13 @@
     }
   })();
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SportsEvent",
-  "name": "11th Hour Backyard Ultra",
-  "description": "A backyard ultra at Bear Creek Lake Park, Colorado. One 4.167-mile loop, every hour, until one runner remains.",
-  "startDate": "2026-10-31T08:00:00-06:00",
-  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-  "eventStatus": "https://schema.org/EventScheduled",
-  "location": {
-    "@type": "Place",
-    "name": "Bear Creek Lake Park",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Lakewood",
-      "addressRegion": "CO",
-      "addressCountry": "US"
-    }
-  },
-  "image": "https://bearcreekbackyardultra.com/images/hero-lake.jpg",
-  "url": "https://bearcreekbackyardultra.com/",
-  "offers": {
-    "@type": "Offer",
-    "price": "60",
-    "priceCurrency": "USD",
-    "url": "https://ultrasignup.com/register.aspx?did=143378",
-    "availability": "https://schema.org/InStock"
-  },
-  "organizer": {
-    "@type": "Organization",
-    "name": "11th Hour Backyard Ultra",
-    "url": "https://bearcreekbackyardultra.com/"
-  }
-}
-</script>
 </head>
+
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="nav-name">11<span class="hour">th</span> Hour Backyard Ultra</div>
+    <div class="nav-name"><a href="index.html" style="text-decoration:none;color:inherit;">11<span class="hour">th</span> Hour Backyard Ultra</a></div>
     <button class="nav-toggle" aria-label="Menu" onclick="this.parentElement.querySelector('.links').classList.toggle('open')">&#9776;</button>
     <div class="links">
       <a href="https://ultrasignup.com/register.aspx?did=143378" class="nav-btn" data-mp-loc="nav">Register on UltraSignup</a>
@@ -339,93 +370,76 @@
   </div>
 </nav>
 
-<header class="hero-outer">
-  <img class="hero-bg" src="/images/hero-lake.jpg" alt="Bear Creek Lake Park">
+
+<header class="hero-outer" style="min-height:auto;">
   <div class="hero-scrim"></div>
-  <div class="wrap hero-content">
+  <div class="wrap hero-content" style="padding:120px 28px 40px;">
     <div class="hero-text">
-      <div class="kicker"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bear+Creek+Lake+Park+Lakewood+CO" target="_blank" rel="noopener" class="kicker-link">Bear Creek Lake Park &middot; Colorado</a></div>
-      <h1 class="title">One loop.<br>Every hour.<br>Until the <span class="ember-word">11th</span> hour.</h1>
-      <div class="badge-row">
-        <span class="badge">Backyard Ultra &middot; Bear Creek Lake Park, CO</span>
-        <span class="badge">Saturday, October 31</span>
-      </div>
-    </div>
-    <div class="hero-actions">
-      <div class="cta-row">
-        <a href="https://ultrasignup.com/register.aspx?did=143378" class="btn btn-primary" data-mp-loc="hero">Register on UltraSignup</a>
-      </div>
+      <div class="kicker"><a href="index.html" class="kicker-link">&larr; Back to race info</a></div>
+      <h1 class="title">Sponsor the <span class="ember-word">11th hour</span></h1>
     </div>
   </div>
 </header>
 
-<section id="intro">
+<section id="sponsors" style="border-top:none;">
   <div class="wrap">
-    <p class="sub">See if you can get to the 11th hour: one 4.167-mile loop, every hour, for as long as you can, up to 11 laps before the park closes for the night. If more than one runner is still going into that final lap, whoever completes it fastest wins. It's one last race before winter takes over, run at the eleventh hour of the season. Starts 8:00 AM on Halloween.</p>
-    <div class="fact-row">
-      <div class="fact">
-        <div class="num">Oct 31</div>
-        <div class="label">Race day</div>
-      </div>
-      <div class="fact">
-        <div class="num">4.167 mi</div>
-        <div class="label">Per loop</div>
-      </div>
-      <div class="fact">
-        <div class="num">60 min</div>
-        <div class="label">Per lap, no more, no less</div>
-      </div>
-      <div class="fact">
-        <div class="num">50 spots</div>
-        <div class="label">$60 entry</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="motion">
-  <div class="wrap">
-    <div class="motion-media">
-          <a href="course.html" class="motion-link" aria-label="View the course details"><img class="motion-video" src="/images/course-map.jpg" alt="Map of the Bear Creek Lake Park course"></a>
-      <div class="motion-overlay"></div>
-      <div class="motion-caption">
-        <p>The same loop, every hour.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="venue">
-  <div class="wrap">
-    
-    <div class="venue-body">
-      <div class="kicker">The Course</div>
-      <h2>Bear Creek Lake Park</h2>
-      <p class="lede">A reservoir-side park in Lakewood, Colorado, with the trail network and access needed to run a repeating loop safely through the night: lake views for the daylight laps, headlamps for the rest.</p>
-      <div class="detail-list">
-        <div class="detail-row"><span class="k">Date</span><span class="v">Saturday, October 31</span></div>
-        <div class="detail-row"><span class="k">Location</span><span class="v">Bear Creek Lake Park, Lakewood, CO</span></div>
-        <div class="detail-row"><span class="k">Start time</span><span class="v">8:00 AM</span></div>
-        <div class="detail-row"><span class="k">Field cap</span><span class="v">50 runners</span></div>
-        <div class="detail-row"><span class="k">Entry fee</span><span class="v">$60 <span style="color:var(--ink-dim);font-size:0.85em;">(includes $10 park entry fee)</span></span></div>
-        <div class="detail-row"><span class="k">Aid</span><span class="v">One station, at start/finish</span></div>
-        <div class="detail-row"><span class="k">Lap cutoff</span><span class="v">11 laps max, final lap starts 6:00 PM</span></div>
-        <div class="detail-row"><span class="k">Final lap</span><span class="v">If more than one runner remains, fastest lap wins</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="register">
-  <div class="wrap">
     <div class="section-head">
-      <div class="kicker">Join the race</div>
-      <h2>Ready for the 11th hour?</h2>
-      <p class="lede">Register to run, or sign up to help make it happen. Either way, we'll see you at Bear Creek Lake Park.</p>
+      <div class="kicker">Sponsors</div>
+      <h2>Who's backing the race</h2>
+      <p class="lede">We're a first-year, community-built race. Sponsors will be listed here as they come on board, and each one helps us keep the entry fee at $60.</p>
     </div>
-    <div class="cta-row">
-      <a href="https://ultrasignup.com/register.aspx?did=143378" class="btn btn-primary" data-mp-loc="cta">Register on UltraSignup</a>
-      <a href="volunteer.html" class="btn btn-primary">Volunteer</a>
+
+    <div class="sponsor-grid">
+      <a class="sponsor-slot" href="/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=slot_tile">
+        <span class="big">Your brand here</span>
+        <span class="small">Message us on Instagram</span>
+      </a>
+      <!-- To add a sponsor, copy this card in front of the slot above:
+      <a class="sponsor-card" href="https://SPONSOR-SITE" target="_blank" rel="noopener">
+        <img src="images/sponsor-name.png" alt="Sponsor name">
+      </a>
+      -->
+    </div>
+
+    <div style="margin-top:56px;">
+
+      <div class="ft-block">
+        <h3>Why sponsor this race</h3>
+        <p>This is a first-year race built from scratch by two Colorado trail runners, and it's filling fast. The field is capped at <strong>50 runners</strong> and entry is just <strong>$60</strong>, park fee included. The format is one 4.167-mile loop, every hour, on the hour, so the same runners and their crews pass the start/finish area, and your brand, every hour for up to 11 hours. We also share how the race is coming together, including our budget, in a weekly video series, so people follow along well before race day.</p>
+      </div>
+
+      <div class="ft-block">
+        <h3>What we're looking for</h3>
+        <ul class="perk-list">
+          <li><strong>Aid station fuel and hot food.</strong> Gels, chews, hydration, coffee, soup and snacks for the start/finish table.</li>
+          <li><strong>Prizes for division winners.</strong> Trail running vests and other gear.</li>
+          <li><strong>Discounts for runners.</strong> A code or credit every registered runner can use.</li>
+          <li><strong>Event gear and supplies.</strong> Anything that helps us put on a good race without raising the entry fee.</li>
+        </ul>
+        <p style="margin-top:18px;">Product, services or a financial contribution all help. We're happy to talk about what makes sense for your brand.</p>
+      </div>
+
+      <div class="ft-block">
+        <h3>What sponsors get</h3>
+        <ul class="perk-list">
+          <li><strong>Your logo and a link</strong> on this page and across the race website.</li>
+          <li><strong>A shoutout</strong> in our Instagram posts and race-week content.</li>
+          <li><strong>A mention in our emails</strong> to registered runners.</li>
+          <li><strong>A presence at the start/finish area</strong>, where every runner comes through every lap.</li>
+          <li><strong>A personal thank-you</strong> from the race directors.</li>
+        </ul>
+      </div>
+
+      <div class="ft-block">
+        <h3>Let's talk</h3>
+        <p>Want to help? Send us a message on Instagram and tell us what you have in mind.</p>
+        <div class="cta-row" style="margin-top:20px;">
+          <a class="btn btn-primary" href="/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=cta_message">Message us on Instagram</a>
+          <a class="btn btn-outline" href="index.html">See the race details</a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -438,6 +452,7 @@
   </div>
 </footer>
 
+
 <script>
   document.querySelectorAll('a[data-mp-loc]').forEach(function(el){
     el.addEventListener('click', function(){
@@ -446,14 +461,6 @@
       }
     });
   });
-  var volForm = document.getElementById('volunteer-form');
-  if (volForm) {
-    volForm.addEventListener('submit', function(){
-      if (window.mixpanel) {
-        mixpanel.track('Volunteer Form Submitted', {}, {transport: 'sendBeacon'});
-      }
-    });
-  }
 </script>
 </body>
 </html>
