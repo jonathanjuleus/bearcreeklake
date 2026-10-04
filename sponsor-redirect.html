@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Taking you to our sponsor…</title>
+<style>
+  body{margin:0;background:#12141C;color:#EDE6D8;font-family:'Public Sans',-apple-system,sans-serif;
+    display:flex;align-items:center;justify-content:center;height:100vh;text-align:center;}
+</style>
+</head>
+<body>
+<div id="msg">Taking you to our sponsor…</div>
+
+<script src="https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script>
+<script type="text/javascript">
+  (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);var j="set set_once union unset remove delete".split(" ");c.get_group=function(){function b(c){h[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));a.push([e,call2])}}for(var a=[],h={},d=0;d<j.length;d++)b(j[d]);return h};b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+
+  mixpanel.init("bf3570ccc4b032d162b0415eda281a30", {track_pageview: false, persistence: "localStorage"});
+
+  /*
+    Tracked sponsor links:   /go/<slug>   (or /go?s=<slug>)
+    Optional:  ?m=<channel>   where the link was shared (email, instagram, qr, card...) - default "link"
+               ?c=<label>     which email/post/flyer it came from, e.g. racer_update_oct
+    Only the sponsors in the table below are allowed - anything else goes to /sponsors.html.
+    The table is generated: edit tools/sponsors.json then run tools/build_sponsors.py
+  */
+  var SPONSORS = {
+    /* SPONSORS:START */
+      "ultimate-direction": {name: "Ultimate Direction", url: "https://ultimatedirection.com/"},
+      "bobs-pickle-pops": {name: "Bob's Pickle Pops", url: "https://bobspicklepops.com/"},
+      "salty-britches": {name: "Salty Britches", url: "https://saltybritches.com/"},
+      "red-silo-coffee": {name: "Red Silo Coffee", url: "https://www.redsilocoffeeroasters.com/"},
+      "quinn-snacks": {name: "Quinn Snacks", url: "https://www.quinnsnacks.com/"}
+      /* SPONSORS:END */
+  };
+
+  var params = new URLSearchParams(window.location.search);
+
+  // Attribute this click to whichever of OUR campaigns brought the visitor here (if tagged)
+  var inbound = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+    var v = params.get(k); if (v) inbound[k] = v;
+  });
+  if (Object.keys(inbound).length) mixpanel.register(inbound);
+
+  var parts = window.location.pathname.split('/').filter(Boolean);
+  var slug = (params.get('s') || (parts[0] === 'go' ? parts[1] : '') || '').toLowerCase();
+  var sponsor = Object.prototype.hasOwnProperty.call(SPONSORS, slug) ? SPONSORS[slug] : null;
+
+  var destination = '/sponsors.html';
+  if (sponsor) {
+    var channel = (params.get('m') || 'link').toLowerCase();
+    var label = params.get('c') || 'link';
+    var u = new URL(sponsor.url);
+    // replace any existing utm_* so the sponsor sees OUR tags
+    Array.from(u.searchParams.keys()).forEach(function(k){ if (k.indexOf('utm_') === 0) u.searchParams.delete(k); });
+    u.searchParams.set('utm_source', 'bearcreekbackyardultra');
+    u.searchParams.set('utm_medium', channel);
+    u.searchParams.set('utm_campaign', '11th_hour_backyard_ultra');
+    u.searchParams.set('utm_content', label);
+    destination = u.toString();
+
+    mixpanel.track('Sponsor Click', {
+      sponsor: sponsor.name,
+      slug: slug,
+      via: 'redirect',
+      channel: channel,
+      campaign_label: label,
+      destination: destination
+    }, {transport: 'sendBeacon', send_immediately: true});
+  }
+
+  setTimeout(function(){ window.location.href = destination; }, 250);
+</script>
+</body>
+</html>

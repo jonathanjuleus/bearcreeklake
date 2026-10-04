@@ -35,6 +35,14 @@
     {
       "source": "/ig",
       "destination": "/ig-redirect.html"
+    },
+    {
+      "source": "/go/:slug",
+      "destination": "/sponsor-redirect.html"
+    },
+    {
+      "source": "/go",
+      "destination": "/sponsor-redirect.html"
     }
   ]
 }
