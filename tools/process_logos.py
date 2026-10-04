@@ -10,6 +10,8 @@ It NEVER redraws or recolors a logo. It only:
 
 Usage (run from the repo root):
   python3 tools/process_logos.py ultimate-direction=/path/to/ud.png quinn-snacks=/path/to/quinn.png ...
+  Add  --thresh 10  if a logo sits on a tinted badge/panel that is very close to white (the default 28
+  would ignore it and trim to the artwork inside).
 
 Slugs used by sponsors.html:
   ultimate-direction  bobs-pickle-pops  salty-britches  red-silo-coffee  quinn-snacks  plain-am
@@ -25,7 +27,7 @@ from PIL import Image
 OUT_DIR = "images/sponsors"
 MAX_H, MAX_W = 200, 560
 PAD_FRAC = 0.04
-THRESH = 28  # how different from the edge color a pixel must be to count as "logo"
+THRESH = 28  # how different from the edge color a pixel must be to count as "logo" (override with --thresh N)
 
 
 def edge_color(im):
@@ -72,8 +74,13 @@ def crop_to_content(im):
 def main():
     if len(sys.argv) < 2:
         print(__doc__); sys.exit(1)
+    global THRESH
+    args = sys.argv[1:]
+    if "--thresh" in args:
+        i = args.index("--thresh"); THRESH = int(args[i + 1]); del args[i:i + 2]
+        print(f"edge sensitivity threshold = {THRESH}")
     os.makedirs(OUT_DIR, exist_ok=True)
-    for arg in sys.argv[1:]:
+    for arg in args:
         slug, _, path = arg.partition("=")
         if not path or not os.path.exists(path):
             print(f"!! {slug}: file not found ({path})"); continue
