@@ -343,6 +343,9 @@
     .sponsor-card.wide{padding:20px 16px;}
     .sponsor-card.wide img{max-height:84px;}
   }
+  /* open slot: full row on tablets, fills the rest of the last row on laptops (4 cols) and phones (2 cols) */
+  @media (min-width:1040px){ .sponsor-slot{grid-column:span var(--s4,4);} }
+  @media (max-width:640px){ .sponsor-slot{grid-column:span var(--s2,2);} }
   .perk-list{list-style:none;padding:0;margin:0;display:grid;gap:14px;}
   .perk-list li{position:relative;padding-left:24px;color:var(--ink-dim);line-height:1.6;font-size:1rem;}
   .perk-list li::before{content:"";position:absolute;left:0;top:0.78em;width:12px;height:2px;background:var(--ember);}
@@ -428,11 +431,14 @@
       <a class="sponsor-card" data-sponsor="Bob's Pickle Pops" data-slug="bobs-pickle-pops" href="https://bobspicklepops.com/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Bob's Pickle Pops">
         <img src="images/sponsors/bobs-pickle-pops.png" alt="Bob's Pickle Pops">
       </a>
-      <!-- SPONSORS:END -->
-      <a class="sponsor-slot" href="/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=slot_tile">
+      <a class="sponsor-card" data-sponsor="Territory Run Co." data-slug="territory-run" href="https://territoryrun.co/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Territory Run Co.">
+        <img src="images/sponsors/territory-run.png" alt="Territory Run Co.">
+      </a>
+      <a class="sponsor-slot" style="--s4:3;--s2:1" href="/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=slot_tile">
         <span class="big">Your brand here</span>
         <span class="small">Message us on Instagram</span>
       </a>
+      <!-- SPONSORS:END -->
     </div>
 
     <div style="margin-top:56px;">

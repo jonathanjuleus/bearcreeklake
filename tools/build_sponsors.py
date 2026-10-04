@@ -52,6 +52,21 @@ def card(s):
     return f'      <div class="{cls}" data-sponsor="{esc(name)}" data-slug="{slug}">\n        {img}\n      </div>\n'
 
 
+IG_SLOT = "/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=slot_tile"
+
+
+def slot(sponsors):
+    """'Your brand here' tile. Sized to fill what's left of the last row so the grid stays even:
+    desktop is 4 columns, phones are 2 (wide cards count as 2). Tablets show it as a full row."""
+    units = sum(2 if x.get("wide") else 1 for x in sponsors)
+    s4 = (4 - units % 4) % 4 or 4
+    s2 = (2 - units % 2) % 2 or 2
+    return (f'      <a class="sponsor-slot" style="--s4:{s4};--s2:{s2}" href="{IG_SLOT}">\n'
+            f'        <span class="big">Your brand here</span>\n'
+            f'        <span class="small">Message us on Instagram</span>\n'
+            f'      </a>\n')
+
+
 def replace_between(text, start, end, new):
     pat = re.compile(re.escape(start) + r".*?" + re.escape(end), re.S)
     if not pat.search(text):
@@ -68,7 +83,7 @@ def main():
             sys.exit(f'{s["name"]}: url must start with https://')
 
     page = open("sponsors.html").read()
-    cards = "".join(card(s) for s in sponsors)
+    cards = "".join(card(s) for s in sponsors) + slot(sponsors)
     page = replace_between(page, "<!-- SPONSORS:START -->", "      <!-- SPONSORS:END -->", cards)
     open("sponsors.html", "w").write(page)
 
