@@ -2,7 +2,8 @@
 """
 Sponsor page + tracked-link generator
 =====================================
-Single source of truth: tools/sponsors.json  (slug, name, url)
+Single source of truth: tools/sponsors.json  (slug, name, url, optional "wide": true)
+  "wide": true makes the card span two tiles - use it for long, thin wordmarks.
 
 Run from the repo root after editing it:
     python3 tools/build_sponsors.py
@@ -42,11 +43,12 @@ def esc(s):
 def card(s):
     name, slug, url = s["name"], s["slug"], s["url"]
     img = f'<img src="images/sponsors/{slug}.png" alt="{esc(name)}">'
+    cls = "sponsor-card wide" if s.get("wide") else "sponsor-card"
     if url:
         href = esc(with_utm(url, "sponsor_page", "logo"))
-        return (f'      <a class="sponsor-card" data-sponsor="{esc(name)}" data-slug="{slug}" href="{href}" '
+        return (f'      <a class="{cls}" data-sponsor="{esc(name)}" data-slug="{slug}" href="{href}" '
                 f'target="_blank" rel="noopener sponsored" aria-label="{esc(name)}">\n        {img}\n      </a>\n')
-    return f'      <div class="sponsor-card" data-sponsor="{esc(name)}" data-slug="{slug}">\n        {img}\n      </div>\n'
+    return f'      <div class="{cls}" data-sponsor="{esc(name)}" data-slug="{slug}">\n        {img}\n      </div>\n'
 
 
 def replace_between(text, start, end, new):

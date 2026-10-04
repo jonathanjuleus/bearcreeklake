@@ -84,8 +84,10 @@ def main():
         out = os.path.join(OUT_DIR, f"{slug}.png")
         im.save(out, optimize=True)
         warn = []
-        if im.height < 120:
-            warn.append(f"low-res ({im.height}px tall) - may look soft on phones; a bigger screenshot would be better")
+        # tiles show a logo at most 80px tall and ~200px wide; want ~2x that for sharp phone screens
+        disp_h = min(80, 200 * im.height / im.width)
+        if im.height < 2 * disp_h:
+            warn.append(f"low-res ({im.width}x{im.height}) - may look soft on phones; a bigger screenshot would be better")
         # light-logo check: mostly very light visible pixels
         rgb = im.convert("RGBA")
         raw = rgb.tobytes()

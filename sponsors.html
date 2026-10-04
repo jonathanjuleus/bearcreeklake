@@ -311,7 +311,8 @@
 
   /* ---------- Sponsors page ---------- */
   .hero-text{max-width:900px;}
-  .sponsor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px;max-width:1000px;}
+  .sponsor-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));grid-auto-flow:row dense;gap:18px;max-width:1000px;}
+  .sponsor-card.wide{grid-column:span 2;}
   .sponsor-slot{
     border:1px dashed var(--line);border-radius:6px;
     padding:34px 20px;min-height:150px;
@@ -404,7 +405,7 @@
       <a class="sponsor-card" data-sponsor="Ultimate Direction" data-slug="ultimate-direction" href="https://ultimatedirection.com/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Ultimate Direction">
         <img src="images/sponsors/ultimate-direction.png" alt="Ultimate Direction">
       </a>
-      <a class="sponsor-card" data-sponsor="Bob's Pickle Pops" data-slug="bobs-pickle-pops" href="https://bobspicklepops.com/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Bob's Pickle Pops">
+      <a class="sponsor-card wide" data-sponsor="Bob's Pickle Pops" data-slug="bobs-pickle-pops" href="https://bobspicklepops.com/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Bob's Pickle Pops">
         <img src="images/sponsors/bobs-pickle-pops.png" alt="Bob's Pickle Pops">
       </a>
       <a class="sponsor-card" data-sponsor="Salty Britches" data-slug="salty-britches" href="https://saltybritches.com/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Salty Britches">
