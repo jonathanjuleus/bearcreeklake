@@ -5,6 +5,7 @@ Sponsor page + tracked-link generator
 Single source of truth: tools/sponsors.json  (slug, name, url, optional "wide": true, "tile": "dark")
   "wide": true makes the card span two tiles - use it for long, thin wordmarks.
   "tile": "dark" gives the card a dark navy tile instead of white - use it for white/cream logos.
+  "size": "large" lets the logo fill more of its tile - use it for small-looking square badges.
 
 Run from the repo root after editing it:
     python3 tools/build_sponsors.py
@@ -44,7 +45,7 @@ def esc(s):
 def card(s):
     name, slug, url = s["name"], s["slug"], s["url"]
     img = f'<img src="images/sponsors/{slug}.png" alt="{esc(name)}">'
-    cls = "sponsor-card" + (" wide" if s.get("wide") else "") + (" dark" if s.get("tile") == "dark" else "")
+    cls = "sponsor-card" + (" wide" if s.get("wide") else "") + (" dark" if s.get("tile") == "dark" else "") + (" large" if s.get("size") == "large" else "")
     if url:
         href = esc(with_utm(url, "sponsor_page", "logo"))
         return (f'      <a class="{cls}" data-sponsor="{esc(name)}" data-slug="{slug}" href="{href}" '

@@ -7,5 +7,5 @@
   {"slug": "plain-am", "name": "Plain AM", "url": "https://www.plain-am.com/"},
   {"slug": "bobs-pickle-pops", "name": "Bob's Pickle Pops", "url": "https://bobspicklepops.com/"},
   {"slug": "territory-run", "name": "Territory Run Co.", "url": "https://territoryrun.co/"},
-  {"slug": "colorado-compass", "name": "Colorado Compass", "url": "https://colorado-compass.beehiiv.com/"}
+  {"slug": "colorado-compass", "name": "Colorado Compass", "url": "https://colorado-compass.beehiiv.com/", "size": "large"}
 ]
