@@ -86,7 +86,7 @@ def main():
         warn = []
         # tiles show a logo at most 80px tall and ~200px wide; want ~2x that for sharp phone screens
         disp_h = min(80, 200 * im.height / im.width)
-        if im.height < 2 * disp_h:
+        if im.height < 1.75 * disp_h:
             warn.append(f"low-res ({im.width}x{im.height}) - may look soft on phones; a bigger screenshot would be better")
         # light-logo check: mostly very light visible pixels
         rgb = im.convert("RGBA")
