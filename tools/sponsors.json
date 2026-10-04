@@ -4,5 +4,6 @@
   {"slug": "salty-britches", "name": "Salty Britches", "url": "https://getsaltybritches.com/"},
   {"slug": "red-silo-coffee", "name": "Red Silo Coffee Roasters", "url": "https://www.redsilocoffeeroasters.com/"},
   {"slug": "quinn-snacks", "name": "Quinn Snacks", "url": "https://www.quinnsnacks.com/", "tile": "dark"},
-  {"slug": "plain-am", "name": "Plain AM", "url": "https://www.plain-am.com/"}
+  {"slug": "plain-am", "name": "Plain AM", "url": "https://www.plain-am.com/"},
+  {"slug": "ephemeral-tap-bottle", "name": "Ephemeral Tap & Bottle", "url": null}
 ]
