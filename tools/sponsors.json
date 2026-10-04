@@ -3,6 +3,6 @@
   {"slug": "bobs-pickle-pops", "name": "Bob's Pickle Pops", "url": "https://bobspicklepops.com/", "wide": true},
   {"slug": "salty-britches", "name": "Salty Britches", "url": "https://saltybritches.com/"},
   {"slug": "red-silo-coffee", "name": "Red Silo Coffee", "url": "https://www.redsilocoffeeroasters.com/"},
-  {"slug": "quinn-snacks", "name": "Quinn Snacks", "url": "https://www.quinnsnacks.com/"},
+  {"slug": "quinn-snacks", "name": "Quinn Snacks", "url": "https://www.quinnsnacks.com/", "tile": "dark"},
   {"slug": "plain-am", "name": "Plain AM", "url": null}
 ]

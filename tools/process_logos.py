@@ -93,7 +93,7 @@ def main():
         raw = rgb.tobytes()
         px = [tuple(raw[i:i+4]) for i in range(0, len(raw), 4) if raw[i+3] > 200]
         if px and sum(1 for p in px if min(p[:3]) > 225) / len(px) > 0.9 and "transparent" in note:
-            warn.append("logo looks white/light - it will vanish on the white tile")
+            warn.append('logo looks white/light - it will vanish on the white tile. Set "tile": "dark" for this sponsor in tools/sponsors.json')
         print(f"ok  {slug}: {im.width}x{im.height}  [{note}]")
         for w in warn:
             print(f"    WARNING: {w}")
