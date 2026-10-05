@@ -325,6 +325,16 @@
     .cap-modal__backdrop,.cap-modal__panel,.flask-marker{transition:none;}
     .flask-marker{top:46.35%;}
   }
+  /* hero price callout */
+  .price-callout{text-align:right;margin-bottom:14px;}
+  .price-callout .amt{font-family:'Fraunces',serif;font-weight:700;font-size:3.4rem;line-height:1;color:var(--ink);text-shadow:0 2px 14px rgba(0,0,0,.45);}
+  .price-callout .lbl{font-size:.78rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-dim);margin-top:4px;}
+  @media (max-width:760px){
+    .price-callout{text-align:left;display:flex;align-items:baseline;gap:10px;margin-bottom:10px;}
+    .price-callout .amt{font-size:2.3rem;}
+    .price-callout .lbl{margin-top:0;font-size:.72rem;}
+  }
+  @media (max-width:760px) and (max-height:680px){ .hero-content{padding-top:72px;padding-bottom:32px;} }
 </style>
 <script type="text/javascript">
   (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
@@ -401,13 +411,14 @@
   <div class="wrap hero-content">
     <div class="hero-text">
       <div class="kicker"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bear+Creek+Lake+Park+Lakewood+CO" target="_blank" rel="noopener" class="kicker-link">Bear Creek Lake Park &middot; Colorado</a></div>
-      <h1 class="title">60 Dollars.<br>One loop.<br>Every hour.<br>Until the <span class="ember-word">11th</span> hour.</h1>
+      <h1 class="title">One loop.<br>Every hour.<br>Until the <span class="ember-word">11th</span> hour.</h1>
       <div class="badge-row">
         <span class="badge">Backyard Ultra &middot; Bear Creek Lake Park, CO</span>
         <span class="badge">Saturday, October 31</span>
       </div>
     </div>
     <div class="hero-actions">
+      <div class="price-callout"><div class="amt">$60</div><div class="lbl">entry &middot; park fee included</div></div>
       <div class="cta-row">
         <a href="https://ultrasignup.com/register.aspx?did=143378" class="btn btn-primary" data-mp-loc="hero">Register on UltraSignup</a>
       </div>
