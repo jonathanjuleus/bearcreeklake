@@ -216,18 +216,18 @@
   /* ---------- Course map comparison ---------- */
   .map-compare{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:minmax(0,560px);
+    justify-content:center;
     gap:24px;
     align-items:stretch;
   }
-  @media (max-width:760px){ .map-compare{grid-template-columns:1fr;} }
 
   .map-col{
     display:flex;
     flex-direction:column;
   }
 
-  .gaia-embed-wrap, .strava-embed-wrap{
+  .gaia-embed-wrap{
     border-radius:6px;
     border:1px solid rgba(255,255,255,0.1);
     overflow:hidden;
@@ -238,9 +238,6 @@
     justify-content:center;
     align-items:center;
     background:#fff;
-  }
-  .strava-embed-wrap{
-    overflow:hidden;
   }
   .map-col .cta-row{
     margin-top:16px;
@@ -347,7 +344,7 @@
     <div class="section-head">
       <div class="kicker">Course</div>
       <h2>One loop, every hour, on the hour</h2>
-      <p class="lede">Starting and finishing at Pelican Point, Bear Creek Lake Park. Two views of the same route below, or open either one directly for turn-by-turn detail and a downloadable GPX.</p>
+      <p class="lede">Starting and finishing at Pelican Point, Bear Creek Lake Park. Open the map in Gaia GPS for turn-by-turn detail and a downloadable GPX.</p>
     </div>
 
     <div class="map-compare">
@@ -357,15 +354,6 @@
         </div>
         <div class="cta-row" style="margin-top:16px;">
           <a href="https://www.gaiagps.com/public/FeYXf79ZqcdnjNDDGU8sdZDZ/" target="_blank" rel="noopener" class="btn btn-outline">Open in Gaia GPS</a>
-        </div>
-      </div>
-
-      <div class="map-col">
-        <div class="strava-embed-wrap">
-          <div class="strava-embed-placeholder" data-embed-type="route" data-embed-id="3530607442631417900" data-style="standard" data-from-embed="false" data-token="3SkiLTenthU_lZop0CKR-X1NyLGUQKvXIoM4v4UXycU"></div>
-        </div>
-        <div class="cta-row" style="margin-top:16px;">
-          <a href="https://www.strava.com/routes/3530607442631417900" target="_blank" rel="noopener" class="btn btn-outline">Open in Strava</a>
         </div>
       </div>
     </div>
@@ -378,8 +366,6 @@
     </div>
   </div>
 </section>
-
-<script src="https://strava-embeds.com/embed.js"></script>
 
 <footer>
   <div class="wrap" style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;width:100%;">
