@@ -439,7 +439,6 @@
     <div class="countdown countdown--hero" id="countdown" aria-live="off">
           <div class="countdown__label">Yard 1 starts in</div>
           <div class="countdown__units">
-            <div class="countdown__unit"><div class="countdown__num" data-cd="d">--</div><div class="countdown__cap">Days</div></div>
             <div class="countdown__unit"><div class="countdown__num" data-cd="h">--</div><div class="countdown__cap">Hours</div></div>
             <div class="countdown__unit"><div class="countdown__num" data-cd="m">--</div><div class="countdown__cap">Min</div></div>
             <div class="countdown__unit"><div class="countdown__num" data-cd="s">--</div><div class="countdown__cap">Sec</div></div>
@@ -646,14 +645,13 @@
   // Race start: Saturday, Oct 31, 2026, 8:00 AM Mountain (MDT, UTC-6)
   var START=Date.UTC(2026,9,31,14,0,0), YARD=3600000, YARDS=11;
   var el=document.getElementById('countdown'); if(!el) return;
-  var n={}; ['d','h','m','s'].forEach(function(k){n[k]=el.querySelector('[data-cd="'+k+'"]');});
+  var n={}; ['h','m','s'].forEach(function(k){n[k]=el.querySelector('[data-cd="'+k+'"]');});
   function pad(x){return (x<10?'0':'')+x;}
   function tick(){
     var now=Date.now(), diff=START-now;
     if(diff>0){
       var t=Math.floor(diff/1000);
-      n.d.textContent=Math.floor(t/86400);
-      n.h.textContent=pad(Math.floor(t%86400/3600));
+      n.h.textContent=pad(Math.floor(t/3600));
       n.m.textContent=pad(Math.floor(t%3600/60));
       n.s.textContent=pad(t%60);
       return;
