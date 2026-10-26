@@ -297,6 +297,7 @@
     <button class="nav-toggle" aria-label="Menu" onclick="this.parentElement.querySelector('.links').classList.toggle('open')">&#9776;</button>
     <div class="links">
       <a href="https://ultrasignup.com/register.aspx?did=143378" class="nav-btn" data-mp-loc="nav">Get added to the waitlist</a>
+      <a href="race-day.html">Race Day</a>
       <a href="course.html">Course</a>
       <a href="first-timers.html">First Timers</a>
       <a href="volunteer.html">Volunteer</a>
@@ -320,46 +321,14 @@
   <div class="wrap">
     <div class="section-head">
       <div class="kicker">Volunteer</div>
-      <h2>Sign up to help</h2>
-      <p class="lede">This race doesn't happen without volunteers. Pick a role and we'll follow up with details closer to race day.</p>
+      <h2>Thank you, volunteers</h2>
+      <p class="lede">This race doesn't happen without volunteers.</p>
     </div>
 
-    <form id="volunteer-form" class="vol-form" action="https://formspree.io/f/mgaeyapd" method="POST">
-      <input type="hidden" name="_subject" value="Volunteer Signup: Bear Creek Lake Park Backyard Ultra">
-
-      <div class="vol-grid">
-        <div class="vol-field">
-          <label for="v-name">Full name</label>
-          <input type="text" id="v-name" name="name" required autocomplete="name">
-        </div>
-        <div class="vol-field">
-          <label for="v-email">Email</label>
-          <input type="email" id="v-email" name="email" required autocomplete="email">
-        </div>
-        <div class="vol-field">
-          <label for="v-phone">Phone</label>
-          <input type="tel" id="v-phone" name="phone" required autocomplete="tel">
-        </div>
-      </div>
-
-      <fieldset class="vol-field" id="v-type-group" style="margin-bottom:24px;border:none;padding:0;">
-        <legend style="font-size:0.85rem;color:var(--ink-dim);padding:0;margin-bottom:10px;">Volunteer role(s) — select all that apply</legend>
-        <div class="vol-checkboxes">
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Medical staff"> Medical staff</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Food tent"> Food tent</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Course marshal"> Course marshal</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Event setup"> Event setup</label>
-          <label class="vol-checkbox-item"><input type="checkbox" name="volunteer_type[]" value="Event breakdown"> Event breakdown</label>
-        </div>
-      </fieldset>
-
-      <div class="vol-field" style="margin-bottom:24px;">
-        <label for="v-notes">Anything we should know? (optional)</label>
-        <textarea id="v-notes" name="notes" rows="3" placeholder="Relevant experience, availability, etc."></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-primary">Sign Up to Volunteer</button>
-    </form>
+    <div class="vol-form" style="text-align:left;">
+      <p style="color:var(--ink);font-size:1.05rem;"><strong>Volunteer sign-ups are closed.</strong> Thank you to everyone who signed up to help!</p>
+      <p style="color:var(--ink-dim);margin-top:8px;">Registered volunteers will get race-day details by email.</p>
+    </div>
   </div>
 </section>
 
