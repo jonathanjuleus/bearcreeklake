@@ -60,6 +60,7 @@
   .nav-name .hour{color:var(--ember);}
   nav .links{display:flex;gap:28px;font-size:0.92rem;color:var(--ink-dim);}
   nav .links a{text-decoration:none;transition:color .15s;}
+  nav .links a.nav-btn{white-space:nowrap;}
   nav .links a:hover{color:var(--ink);}
   .nav-toggle{display:none;background:none;border:none;color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;padding:6px 4px;}
   @media (max-width:640px){
@@ -295,7 +296,7 @@
     <div class="nav-name"><a href="index.html" style="text-decoration:none;color:inherit;">11<span class="hour">th</span> Hour Backyard Ultra</a></div>
     <button class="nav-toggle" aria-label="Menu" onclick="this.parentElement.querySelector('.links').classList.toggle('open')">&#9776;</button>
     <div class="links">
-      <a href="https://ultrasignup.com/register.aspx?did=143378" class="nav-btn" data-mp-loc="nav">Register on UltraSignup</a>
+      <a href="https://ultrasignup.com/register.aspx?did=143378" class="nav-btn" data-mp-loc="nav">Get added to the waitlist</a>
       <a href="course.html">Course</a>
       <a href="first-timers.html">First Timers</a>
       <a href="volunteer.html">Volunteer</a>
