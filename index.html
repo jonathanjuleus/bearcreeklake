@@ -340,20 +340,32 @@
   }
   @media (max-width:760px) and (max-height:680px){ .hero-content{padding-top:72px;padding-bottom:32px;} }
   /* hero countdown */
-  .countdown{margin-top:26px;}
-  .countdown__label{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:10px;}
-  .countdown__units{display:flex;gap:10px;}
-  .countdown__unit{min-width:74px;padding:10px 8px 8px;text-align:center;background:rgba(18,20,28,0.55);border:1px solid rgba(237,230,216,0.2);backdrop-filter:blur(4px);border-radius:2px;}
-  .countdown__num{font-family:'Fraunces',serif;font-weight:600;font-size:2.2rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;}
-  .countdown__cap{font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin-top:6px;}
-  .countdown__live{font-family:'Fraunces',serif;font-size:1.6rem;color:var(--ink);}
+  .hero-countdown{position:absolute;z-index:2;top:64px;left:0;right:0;}
+  .hero-countdown .wrap{display:flex;justify-content:flex-end;}
+  .countdown{text-align:center;}
+  .countdown__label{font-size:.9rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:12px;text-shadow:0 1px 8px rgba(0,0,0,.5);}
+  .countdown__label b{color:var(--ember);font-weight:600;}
+  .countdown__units{display:flex;gap:12px;}
+  .countdown__unit{min-width:132px;padding:16px 10px 12px;background:rgba(18,20,28,0.62);border:1px solid rgba(237,230,216,0.22);border-top:3px solid var(--ember);backdrop-filter:blur(6px);border-radius:3px;box-shadow:0 12px 34px rgba(0,0,0,.35);}
+  .countdown__num{font-family:'Fraunces',serif;font-weight:600;font-size:4.6rem;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .countdown__cap{font-size:.75rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-dim);margin-top:8px;}
+  .countdown__live{font-family:'Fraunces',serif;font-weight:600;font-size:2.6rem;line-height:1.1;color:var(--ink);padding:18px 26px;background:rgba(18,20,28,0.62);border:1px solid rgba(237,230,216,0.22);border-top:3px solid var(--ember);backdrop-filter:blur(6px);border-radius:3px;}
   .countdown__live em{color:var(--ember);}
+  @media (max-width:1100px){
+    .countdown__unit{min-width:104px;}
+    .countdown__num{font-size:3.6rem;}
+  }
   @media (max-width:760px){
-    .countdown{margin-top:20px;}
+    .hero-countdown{top:18px;}
+    .hero-countdown .wrap{justify-content:stretch;padding:0 20px;}
+    .countdown{width:100%;}
+    .countdown__label{font-size:.72rem;margin-bottom:8px;}
     .countdown__units{gap:8px;}
-    .countdown__unit{min-width:0;flex:1;padding:8px 4px 6px;}
-    .countdown__num{font-size:1.6rem;}
-    .countdown__cap{font-size:.6rem;}
+    .countdown__unit{min-width:0;flex:1;padding:10px 4px 8px;}
+    .countdown__num{font-size:2.3rem;}
+    .countdown__cap{font-size:.6rem;letter-spacing:.12em;}
+    .countdown__live{font-size:1.5rem;padding:12px 16px;}
+    .hero-content{padding-top:150px;}
   }
 </style>
 <script type="text/javascript">
@@ -428,6 +440,17 @@
 <header class="hero-outer">
   <img class="hero-bg" src="/images/hero-lake.jpg" alt="Bear Creek Lake Park">
   <div class="hero-scrim"></div>
+  <div class="hero-countdown"><div class="wrap">
+    <div class="countdown countdown--hero" id="countdown" aria-live="off">
+          <div class="countdown__label">Yard 1 starts in</div>
+          <div class="countdown__units">
+            <div class="countdown__unit"><div class="countdown__num" data-cd="d">--</div><div class="countdown__cap">Days</div></div>
+            <div class="countdown__unit"><div class="countdown__num" data-cd="h">--</div><div class="countdown__cap">Hours</div></div>
+            <div class="countdown__unit"><div class="countdown__num" data-cd="m">--</div><div class="countdown__cap">Min</div></div>
+            <div class="countdown__unit"><div class="countdown__num" data-cd="s">--</div><div class="countdown__cap">Sec</div></div>
+          </div>
+        </div>
+  </div></div>
   <div class="wrap hero-content">
     <div class="hero-text">
       <div class="kicker"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bear+Creek+Lake+Park+Lakewood+CO" target="_blank" rel="noopener" class="kicker-link">Bear Creek Lake Park &middot; Colorado</a></div>
@@ -435,15 +458,6 @@
       <div class="badge-row">
         <span class="badge">Backyard Ultra &middot; Bear Creek Lake Park, CO</span>
         <span class="badge">Saturday, October 31</span>
-      </div>
-      <div class="countdown" id="countdown" aria-live="off">
-        <div class="countdown__label">Yard 1 starts in</div>
-        <div class="countdown__units">
-          <div class="countdown__unit"><div class="countdown__num" data-cd="d">--</div><div class="countdown__cap">Days</div></div>
-          <div class="countdown__unit"><div class="countdown__num" data-cd="h">--</div><div class="countdown__cap">Hours</div></div>
-          <div class="countdown__unit"><div class="countdown__num" data-cd="m">--</div><div class="countdown__cap">Min</div></div>
-          <div class="countdown__unit"><div class="countdown__num" data-cd="s">--</div><div class="countdown__cap">Sec</div></div>
-        </div>
       </div>
     </div>
     <div class="hero-actions">
