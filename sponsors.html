@@ -340,6 +340,8 @@
     text-decoration:none;
     transition:transform .15s ease, box-shadow .15s ease;
   }
+  .sponsor-card.has-cap{flex-direction:column;gap:10px;}
+  .sponsor-cap{font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#4D148C;}
   a.sponsor-card:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.35);}
   .sponsor-card img{max-width:100%;max-height:80px;width:auto;height:auto;display:block;}
   @media (max-width:640px){
@@ -455,7 +457,11 @@
       <a class="sponsor-card" data-sponsor="Eldorado Natural Spring Water" data-slug="eldorado" href="https://www.eldoradosprings.com/?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="Eldorado Natural Spring Water">
         <img src="images/sponsors/eldorado.png" alt="Eldorado Natural Spring Water">
       </a>
-      <a class="sponsor-slot" style="--s4:4;--s2:2" href="/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=slot_tile">
+      <a class="sponsor-card has-cap" data-sponsor="FedEx Office Golden" data-slug="fedex-office-golden" href="https://local.fedex.com/en-us/co/golden/office-0470?utm_source=bearcreekbackyardultra&amp;utm_medium=sponsor_page&amp;utm_campaign=11th_hour_backyard_ultra&amp;utm_content=logo" target="_blank" rel="noopener sponsored" aria-label="FedEx Office Golden">
+        <img src="images/sponsors/fedex-office-golden.png" alt="FedEx Office Golden">
+        <span class="sponsor-cap">Golden, CO</span>
+      </a>
+      <a class="sponsor-slot" style="--s4:3;--s2:1" href="/ig?utm_source=website&utm_medium=sponsors_page&utm_campaign=sponsor_outreach&utm_content=slot_tile">
         <span class="big">Your brand here</span>
         <span class="small">Message us on Instagram</span>
       </a>

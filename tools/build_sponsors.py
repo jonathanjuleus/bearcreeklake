@@ -6,6 +6,7 @@ Single source of truth: tools/sponsors.json  (slug, name, url, optional "wide": 
   "wide": true makes the card span two tiles - use it for long, thin wordmarks.
   "tile": "dark" gives the card a dark navy tile instead of white - use it for white/cream logos.
   "size": "large" lets the logo fill more of its tile - use it for small-looking square badges.
+  "caption": "Golden, CO" prints a small line of text under the logo (e.g. a store location).
 
 Run from the repo root after editing it:
     python3 tools/build_sponsors.py
@@ -46,7 +47,9 @@ def esc(s):
 def card(s):
     name, slug, url = s["name"], s["slug"], s["url"]
     img = f'<img src="images/sponsors/{slug}.png" alt="{esc(name)}">'
-    cls = "sponsor-card" + (" wide" if s.get("wide") else "") + (" dark" if s.get("tile") == "dark" else "") + (" large" if s.get("size") == "large" else "")
+    if s.get("caption"):
+        img += f'\n        <span class="sponsor-cap">{esc(s["caption"])}</span>'
+    cls = "sponsor-card" + (" wide" if s.get("wide") else "") + (" dark" if s.get("tile") == "dark" else "") + (" large" if s.get("size") == "large" else "") + (" has-cap" if s.get("caption") else "")
     if url:
         href = esc(with_utm(url, "sponsor_page", "logo"))
         return (f'      <a class="{cls}" data-sponsor="{esc(name)}" data-slug="{slug}" href="{href}" '
