@@ -93,6 +93,8 @@ var LIVE_SPONSORS = [
   function setPhase(phase){
     if (phase === lastPhase) return;
     lastPhase = phase;
+    var sec = document.getElementById('live');
+    if (sec) { sec.classList.toggle('phase-before', phase === 'before'); }
     if (phase === 'before') {
       elStatus.textContent = 'Livestream · Saturday, October 31';
     } else if (phase === 'during') {
