@@ -285,21 +285,19 @@
   }
   @media (max-width:760px) and (max-height:680px){ .hero-content{padding-top:72px;padding-bottom:32px;} }
   /* hero countdown */
-  .hero-outer{flex-direction:column;justify-content:space-between;align-items:stretch;}
-  .hero-countdown{position:relative;z-index:2;padding-top:48px;}
-  .hero-outer .hero-content{padding-top:48px;}
+  #live .live-wait{width:100%;padding:34px 28px 26px;}
+  #live .live-video.no-stream{min-height:0;}
+  .live-wait-note{font-size:.95rem;margin-top:18px !important;}
   .countdown{text-align:center;width:100%;}
   .countdown__label{font-size:1.3rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:16px;text-shadow:0 1px 10px rgba(0,0,0,.55);}
   .countdown__units{display:flex;gap:20px;}
   .countdown__unit{flex:1;min-width:0;padding:26px 10px 20px;background:rgba(18,20,28,0.62);border:1px solid rgba(237,230,216,0.22);border-top:5px solid var(--ember);backdrop-filter:blur(6px);border-radius:4px;box-shadow:0 16px 44px rgba(0,0,0,.4);}
-  .countdown__num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3.4rem,11vw,9.2rem);line-height:.95;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .countdown__num{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(3.4rem,10vw,8.4rem);line-height:.95;color:var(--ink);font-variant-numeric:tabular-nums;}
   .countdown__cap{font-size:1rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-dim);margin-top:12px;}
   .countdown__live{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(2rem,6vw,5.2rem);line-height:1.1;color:var(--ink);padding:28px 32px;background:rgba(18,20,28,0.62);border:1px solid rgba(237,230,216,0.22);border-top:5px solid var(--ember);backdrop-filter:blur(6px);border-radius:4px;}
   .countdown__live em{color:var(--ember);}
   @media (max-width:760px){
-    .hero-countdown{padding-top:20px;}
-    .hero-countdown .wrap{padding:0 16px;}
-    .hero-outer .hero-content{padding-top:36px;}
+    #live .live-wait{padding:22px 12px 18px;}
     .countdown__label{font-size:.85rem;margin-bottom:10px;}
     .countdown__units{gap:8px;}
     .countdown__unit{padding:14px 2px 10px;border-top-width:4px;}
@@ -308,7 +306,7 @@
     .countdown__live{padding:16px 18px;}
   }
   /* ---------- Livestream ---------- */
-  #live{border-top:none;padding:44px 0 8px;}
+  #live{border-top:none;padding:36px 0 40px;}
   #live .section-head{margin-bottom:22px;}
   .live-kicker{display:inline-flex;align-items:center;gap:8px;}
   .live-dot{width:9px;height:9px;border-radius:50%;background:var(--ink-dim);display:inline-block;flex-shrink:0;}
@@ -433,19 +431,59 @@
   </div>
 </nav>
 
+<section id="live">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker live-kicker" id="live-kicker"><span class="live-dot"></span><span id="live-status">Livestream &middot; Saturday, October 31</span></div>
+      <h2>Watch the race live</h2>
+      <p class="lede" id="live-lede">Follow every loop from the start corral at Pelican Point. The stream goes live just before the 8:00 AM start.</p>
+    </div>
+
+    <div class="live-frame">
+      <div class="live-video no-stream" id="live-video">
+        <div class="live-wait">
+          <div class="countdown countdown--live" id="countdown" aria-live="off">
+            <div class="countdown__label">Yard 1 starts in</div>
+            <div class="countdown__units">
+              <div class="countdown__unit"><div class="countdown__num" data-cd="h">--</div><div class="countdown__cap">Hours</div></div>
+              <div class="countdown__unit"><div class="countdown__num" data-cd="m">--</div><div class="countdown__cap">Min</div></div>
+              <div class="countdown__unit"><div class="countdown__num" data-cd="s">--</div><div class="countdown__cap">Sec</div></div>
+            </div>
+          </div>
+          <p class="live-wait-note">The livestream plays right here when the race starts.</p>
+        </div>
+      </div>
+      <div class="live-bar" aria-live="off">
+        <div class="lb-clock">
+          <div class="lb-cell">
+            <div class="lb-label">Loop</div>
+            <div class="lb-val" id="lb-loop">&mdash;</div>
+          </div>
+          <div class="lb-cell lb-main" id="lb-main">
+            <div class="lb-label" id="lb-next-label">Race starts in</div>
+            <div class="lb-val big" id="lb-next">--:--</div>
+          </div>
+          <div class="lb-cell">
+            <div class="lb-label">Race time</div>
+            <div class="lb-val" id="lb-elapsed">0:00:00</div>
+          </div>
+        </div>
+        <a class="lb-sponsor" id="lb-sponsor" href="sponsors.html" target="_blank" rel="noopener sponsored">
+          <span class="lb-label">Thanks to</span>
+          <span class="lb-plate" id="lb-plate"><img id="lb-logo" src="images/sponsors/ultimate-direction.png" alt="Ultimate Direction"></span>
+        </a>
+      </div>
+    </div>
+    <div class="live-foot">
+      <span>The clock follows the official race schedule: a new loop every hour on the hour, 11 loops max.</span>
+      <a href="sponsors.html">See all our sponsors &rarr;</a>
+    </div>
+  </div>
+</section>
+
 <header class="hero-outer">
   <img class="hero-bg" src="/images/hero-lake.jpg" alt="Bear Creek Lake Park">
   <div class="hero-scrim"></div>
-  <div class="hero-countdown"><div class="wrap">
-    <div class="countdown countdown--hero" id="countdown" aria-live="off">
-          <div class="countdown__label">Yard 1 starts in</div>
-          <div class="countdown__units">
-            <div class="countdown__unit"><div class="countdown__num" data-cd="h">--</div><div class="countdown__cap">Hours</div></div>
-            <div class="countdown__unit"><div class="countdown__num" data-cd="m">--</div><div class="countdown__cap">Min</div></div>
-            <div class="countdown__unit"><div class="countdown__num" data-cd="s">--</div><div class="countdown__cap">Sec</div></div>
-          </div>
-        </div>
-  </div></div>
   <div class="wrap hero-content">
     <div class="hero-text">
       <div class="kicker"><a href="https://www.google.com/maps/search/?api=1&amp;query=Bear+Creek+Lake+Park+Lakewood+CO" target="_blank" rel="noopener" class="kicker-link">Bear Creek Lake Park &middot; Colorado</a></div>
@@ -488,48 +526,6 @@
   </div>
 </section>
 
-<section id="live">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker live-kicker" id="live-kicker"><span class="live-dot"></span><span id="live-status">Livestream &middot; Saturday, October 31</span></div>
-      <h2>Watch the race live</h2>
-      <p class="lede" id="live-lede">Follow every loop from the start corral at Pelican Point. The stream goes live just before the 8:00 AM start.</p>
-    </div>
-
-    <div class="live-frame">
-      <div class="live-video no-stream" id="live-video">
-        <div class="live-wait">
-          <div class="display">The stream starts here on race day</div>
-          <p>Check back Saturday morning, October 31.</p>
-        </div>
-      </div>
-      <div class="live-bar" aria-live="off">
-        <div class="lb-clock">
-          <div class="lb-cell">
-            <div class="lb-label">Loop</div>
-            <div class="lb-val" id="lb-loop">&mdash;</div>
-          </div>
-          <div class="lb-cell lb-main" id="lb-main">
-            <div class="lb-label" id="lb-next-label">Race starts in</div>
-            <div class="lb-val big" id="lb-next">--:--</div>
-          </div>
-          <div class="lb-cell">
-            <div class="lb-label">Race time</div>
-            <div class="lb-val" id="lb-elapsed">0:00:00</div>
-          </div>
-        </div>
-        <a class="lb-sponsor" id="lb-sponsor" href="sponsors.html" target="_blank" rel="noopener sponsored">
-          <span class="lb-label">Thanks to</span>
-          <span class="lb-plate" id="lb-plate"><img id="lb-logo" src="images/sponsors/ultimate-direction.png" alt="Ultimate Direction"></span>
-        </a>
-      </div>
-    </div>
-    <div class="live-foot">
-      <span>The clock follows the official race schedule: a new loop every hour on the hour, 11 loops max.</span>
-      <a href="sponsors.html">See all our sponsors &rarr;</a>
-    </div>
-  </div>
-</section>
 
 <section id="motion">
   <div class="wrap">
