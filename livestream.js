@@ -9,11 +9,10 @@
                       Measure it in the test stream; ~3-5 with Ultra low latency.
 
    Preview tricks (no code change needed):
-     <page>?v=VIDEO_ID       try any YouTube video or stream in the player
-     <page>?t=10:57          run the clock as if it's 10:57 AM on race day
+     index.html?v=VIDEO_ID       try any YouTube video or stream in the player
+     index.html?t=10:57          run the clock as if it's 10:57 AM on race day
 
-   Used by index.html and race-day.html (both load this file), so set
-   youtubeId once here and the stream shows on both pages.
+   Loaded by index.html (the homepage livestream section).
    ========================================================================== */
 var STREAM = {
   youtubeId: '',

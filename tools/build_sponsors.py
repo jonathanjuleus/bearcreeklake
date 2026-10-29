@@ -14,7 +14,7 @@ Run from the repo root after editing it:
 It rewrites three generated regions (between the START/END markers):
   1. the sponsor cards in sponsors.html
   2. the sponsor lookup table in sponsor-redirect.html (powers /go/<slug>)
-  3. the rotating sponsor banner under the livestream (livestream.js, used by index.html and race-day.html)
+  3. the rotating sponsor banner under the livestream (livestream.js, used by index.html)
 
 Tracking you get for every sponsor with a url:
   - Mixpanel event "Sponsor Click" {sponsor, slug, via, ...}

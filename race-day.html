@@ -343,61 +343,6 @@
   .rd-costume p{color:var(--ink-dim);}
   .rd-intro-note{margin-top:18px;}
 
-  /* ---------- Livestream ---------- */
-  #live{border-top:none;padding:44px 0 8px;}
-  #live .section-head{margin-bottom:22px;}
-  .live-kicker{display:inline-flex;align-items:center;gap:8px;}
-  .live-dot{width:9px;height:9px;border-radius:50%;background:var(--ink-dim);display:inline-block;flex-shrink:0;}
-  .is-live .live-dot{background:#E5484D;box-shadow:0 0 0 0 rgba(229,72,77,.6);animation:livePulse 1.8s infinite;}
-  @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(229,72,77,.55);}70%{box-shadow:0 0 0 9px rgba(229,72,77,0);}100%{box-shadow:0 0 0 0 rgba(229,72,77,0);}}
-
-  .live-frame{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg-1);max-width:1000px;}
-  .live-video{position:relative;aspect-ratio:16/9;background:#000;}
-  .live-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
-  .live-video.no-stream{aspect-ratio:auto;min-height:220px;display:flex;align-items:center;justify-content:center;
-    background:linear-gradient(0deg,rgba(18,20,28,.9),rgba(18,20,28,.55)),url('images/hero-lake.jpg') center 68%/cover;}
-  .live-wait{text-align:center;padding:36px 24px;}
-  .live-wait .display{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:500;}
-  .live-wait p{color:var(--ink-dim);margin-top:6px;}
-
-  .live-bar{display:flex;align-items:stretch;border-top:1px solid var(--line);background:var(--bg-0);}
-  .lb-clock{display:flex;flex:1;min-width:0;}
-  .lb-cell{padding:14px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;}
-  .lb-cell.lb-main{flex:1;min-width:0;}
-  .lb-label{font-size:0.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--moon);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-  .lb-val{font-family:'Fraunces',serif;font-size:1.45rem;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap;}
-  .lb-val.big{font-size:2.1rem;}
-  .lb-val .of{color:var(--ink-dim);font-size:0.8em;}
-  .lb-main.warn .lb-label{color:var(--ember);font-weight:600;}
-  .lb-main.warn .lb-val{color:var(--ember);}
-
-  .lb-sponsor{display:flex;align-items:center;gap:14px;padding:10px 16px 10px 20px;text-decoration:none;flex-shrink:0;width:330px;}
-  .lb-sponsor .lb-label{color:var(--ink-dim);}
-  .lb-plate{position:relative;flex:1;height:64px;background:#fff;border-radius:4px;overflow:hidden;}
-  .lb-plate.dark{background:var(--bg-1);box-shadow:inset 0 0 0 1px var(--line);}
-  .lb-plate img{position:absolute;inset:8px 14px;width:calc(100% - 28px);height:calc(100% - 16px);object-fit:contain;transition:opacity .45s ease;}
-  .lb-plate img.out{opacity:0;}
-  a.lb-sponsor:hover .lb-plate{box-shadow:0 0 0 2px var(--ember);}
-
-  .live-foot{max-width:1000px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin-top:12px;font-size:0.88rem;color:var(--ink-dim);}
-  .live-foot a{color:var(--ink-dim);}
-  .live-foot a:hover{color:var(--ink);}
-
-  @media (max-width:760px){
-    .live-bar{flex-direction:column;}
-    .lb-cell{padding:12px 14px;}
-    .lb-cell:last-child{border-right:none;}
-    .lb-main .lb-label{white-space:normal;line-height:1.3;}
-    .lb-val{font-size:1.2rem;}
-    .lb-val.big{font-size:1.7rem;}
-    .lb-sponsor{width:auto;border-top:1px solid var(--line);padding:10px 14px;}
-    .lb-plate{height:56px;}
-  }
-  @media (max-width:420px){
-    .lb-cell{padding:10px 11px;}
-    .lb-label{font-size:0.66rem;letter-spacing:.1em;}
-    .lb-val.big{font-size:1.5rem;}
-  }
 </style>
 <script type="text/javascript">
   (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
@@ -443,49 +388,6 @@
     </div>
   </div>
 </header>
-
-<section id="live">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker live-kicker" id="live-kicker"><span class="live-dot"></span><span id="live-status">Livestream &middot; Saturday, October 31</span></div>
-      <h2>Watch the race live</h2>
-      <p class="lede" id="live-lede">Follow every loop from the start corral at Pelican Point. The stream goes live just before the 8:00 AM start.</p>
-    </div>
-
-    <div class="live-frame">
-      <div class="live-video no-stream" id="live-video">
-        <div class="live-wait">
-          <div class="display">The stream starts here on race day</div>
-          <p>Check back Saturday morning, October 31.</p>
-        </div>
-      </div>
-      <div class="live-bar" aria-live="off">
-        <div class="lb-clock">
-          <div class="lb-cell">
-            <div class="lb-label">Loop</div>
-            <div class="lb-val" id="lb-loop">&mdash;</div>
-          </div>
-          <div class="lb-cell lb-main" id="lb-main">
-            <div class="lb-label" id="lb-next-label">Race starts in</div>
-            <div class="lb-val big" id="lb-next">--:--</div>
-          </div>
-          <div class="lb-cell">
-            <div class="lb-label">Race time</div>
-            <div class="lb-val" id="lb-elapsed">0:00:00</div>
-          </div>
-        </div>
-        <a class="lb-sponsor" id="lb-sponsor" href="sponsors.html" target="_blank" rel="noopener sponsored">
-          <span class="lb-label">Thanks to</span>
-          <span class="lb-plate" id="lb-plate"><img id="lb-logo" src="images/sponsors/ultimate-direction.png" alt="Ultimate Direction"></span>
-        </a>
-      </div>
-    </div>
-    <div class="live-foot">
-      <span>The clock follows the official race schedule: a new loop every hour on the hour, 11 loops max.</span>
-      <a href="sponsors.html">See all our sponsors &rarr;</a>
-    </div>
-  </div>
-</section>
 
 <section id="race-day" style="border-top:none;">
   <div class="wrap">
@@ -636,6 +538,5 @@
   }
 </script>
 
-<script src="livestream.js"></script>
 </body>
 </html>
