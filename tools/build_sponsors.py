@@ -14,7 +14,7 @@ Run from the repo root after editing it:
 It rewrites three generated regions (between the START/END markers):
   1. the sponsor cards in sponsors.html
   2. the sponsor lookup table in sponsor-redirect.html (powers /go/<slug>)
-  3. the rotating sponsor banner under the livestream in race-day.html
+  3. the rotating sponsor banner under the livestream (livestream.js, used by index.html and race-day.html)
 
 Tracking you get for every sponsor with a url:
   - Mixpanel event "Sponsor Click" {sponsor, slug, via, ...}
@@ -106,9 +106,9 @@ def main():
                              "dark": s.get("tile") == "dark"}) + ",\n"
         for s in sponsors
     )
-    rd = open("race-day.html").read()
-    rd = replace_between(rd, "/* LIVE_SPONSORS:START */", "  /* LIVE_SPONSORS:END */", live)
-    open("race-day.html", "w").write(rd)
+    ls = open("livestream.js").read()
+    ls = replace_between(ls, "/* LIVE_SPONSORS:START */", "  /* LIVE_SPONSORS:END */", live)
+    open("livestream.js", "w").write(ls)
 
     linked = [s for s in sponsors if s["url"]]
     print(f"{len(sponsors)} sponsors, {len(linked)} with tracked links")
