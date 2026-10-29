@@ -342,6 +342,62 @@
   .rd-costume h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.55rem;margin:4px 0 6px;}
   .rd-costume p{color:var(--ink-dim);}
   .rd-intro-note{margin-top:18px;}
+
+  /* ---------- Livestream ---------- */
+  #live{border-top:none;padding:44px 0 8px;}
+  #live .section-head{margin-bottom:22px;}
+  .live-kicker{display:inline-flex;align-items:center;gap:8px;}
+  .live-dot{width:9px;height:9px;border-radius:50%;background:var(--ink-dim);display:inline-block;flex-shrink:0;}
+  .is-live .live-dot{background:#E5484D;box-shadow:0 0 0 0 rgba(229,72,77,.6);animation:livePulse 1.8s infinite;}
+  @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(229,72,77,.55);}70%{box-shadow:0 0 0 9px rgba(229,72,77,0);}100%{box-shadow:0 0 0 0 rgba(229,72,77,0);}}
+
+  .live-frame{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg-1);max-width:1000px;}
+  .live-video{position:relative;aspect-ratio:16/9;background:#000;}
+  .live-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;}
+  .live-video.no-stream{aspect-ratio:auto;min-height:220px;display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(0deg,rgba(18,20,28,.9),rgba(18,20,28,.55)),url('images/hero-lake.jpg') center 68%/cover;}
+  .live-wait{text-align:center;padding:36px 24px;}
+  .live-wait .display{font-size:clamp(1.3rem,2.6vw,1.8rem);font-weight:500;}
+  .live-wait p{color:var(--ink-dim);margin-top:6px;}
+
+  .live-bar{display:flex;align-items:stretch;border-top:1px solid var(--line);background:var(--bg-0);}
+  .lb-clock{display:flex;flex:1;min-width:0;}
+  .lb-cell{padding:14px 20px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;}
+  .lb-cell.lb-main{flex:1;min-width:0;}
+  .lb-label{font-size:0.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--moon);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .lb-val{font-family:'Fraunces',serif;font-size:1.45rem;line-height:1.15;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  .lb-val.big{font-size:2.1rem;}
+  .lb-val .of{color:var(--ink-dim);font-size:0.8em;}
+  .lb-main.warn .lb-label{color:var(--ember);font-weight:600;}
+  .lb-main.warn .lb-val{color:var(--ember);}
+
+  .lb-sponsor{display:flex;align-items:center;gap:14px;padding:10px 16px 10px 20px;text-decoration:none;flex-shrink:0;width:330px;}
+  .lb-sponsor .lb-label{color:var(--ink-dim);}
+  .lb-plate{position:relative;flex:1;height:64px;background:#fff;border-radius:4px;overflow:hidden;}
+  .lb-plate.dark{background:var(--bg-1);box-shadow:inset 0 0 0 1px var(--line);}
+  .lb-plate img{position:absolute;inset:8px 14px;width:calc(100% - 28px);height:calc(100% - 16px);object-fit:contain;transition:opacity .45s ease;}
+  .lb-plate img.out{opacity:0;}
+  a.lb-sponsor:hover .lb-plate{box-shadow:0 0 0 2px var(--ember);}
+
+  .live-foot{max-width:1000px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 20px;margin-top:12px;font-size:0.88rem;color:var(--ink-dim);}
+  .live-foot a{color:var(--ink-dim);}
+  .live-foot a:hover{color:var(--ink);}
+
+  @media (max-width:760px){
+    .live-bar{flex-direction:column;}
+    .lb-cell{padding:12px 14px;}
+    .lb-cell:last-child{border-right:none;}
+    .lb-main .lb-label{white-space:normal;line-height:1.3;}
+    .lb-val{font-size:1.2rem;}
+    .lb-val.big{font-size:1.7rem;}
+    .lb-sponsor{width:auto;border-top:1px solid var(--line);padding:10px 14px;}
+    .lb-plate{height:56px;}
+  }
+  @media (max-width:420px){
+    .lb-cell{padding:10px 11px;}
+    .lb-label{font-size:0.66rem;letter-spacing:.1em;}
+    .lb-val.big{font-size:1.5rem;}
+  }
 </style>
 <script type="text/javascript">
   (function(f,b){if(!b.__SV){var e,g,i,h;window.mixpanel=b;b._i=[];b.init=function(e,f,c){function g(a,d){var b=d.split(".");2==b.length&&(a=a[b[0]],d=b[1]);a[d]=function(){a.push([d].concat(Array.prototype.slice.call(arguments,0)))}}var a=b;"undefined"!==typeof c?a=b[c]=[]:c="mixpanel";a.people=a.people||[];a.toString=function(a){var d="mixpanel";"mixpanel"!==c&&(d+="."+c);a||(d+=" (stub)");return d};a.people.toString=function(){return a.toString(1)+".people (stub)"};i="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking start_batch_senders people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
@@ -387,6 +443,49 @@
     </div>
   </div>
 </header>
+
+<section id="live">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="kicker live-kicker" id="live-kicker"><span class="live-dot"></span><span id="live-status">Livestream &middot; Saturday, October 31</span></div>
+      <h2>Watch the race live</h2>
+      <p class="lede" id="live-lede">Follow every loop from the start corral at Pelican Point. The stream goes live just before the 8:00 AM start.</p>
+    </div>
+
+    <div class="live-frame">
+      <div class="live-video no-stream" id="live-video">
+        <div class="live-wait">
+          <div class="display">The stream starts here on race day</div>
+          <p>Check back Saturday morning, October 31.</p>
+        </div>
+      </div>
+      <div class="live-bar" aria-live="off">
+        <div class="lb-clock">
+          <div class="lb-cell">
+            <div class="lb-label">Loop</div>
+            <div class="lb-val" id="lb-loop">&mdash;</div>
+          </div>
+          <div class="lb-cell lb-main" id="lb-main">
+            <div class="lb-label" id="lb-next-label">Race starts in</div>
+            <div class="lb-val big" id="lb-next">--:--</div>
+          </div>
+          <div class="lb-cell">
+            <div class="lb-label">Race time</div>
+            <div class="lb-val" id="lb-elapsed">0:00:00</div>
+          </div>
+        </div>
+        <a class="lb-sponsor" id="lb-sponsor" href="sponsors.html" target="_blank" rel="noopener sponsored">
+          <span class="lb-label">Thanks to</span>
+          <span class="lb-plate" id="lb-plate"><img id="lb-logo" src="images/sponsors/ultimate-direction.png" alt="Ultimate Direction"></span>
+        </a>
+      </div>
+    </div>
+    <div class="live-foot">
+      <span>The clock follows the official race schedule: a new loop every hour on the hour, 11 loops max.</span>
+      <a href="sponsors.html">See all our sponsors &rarr;</a>
+    </div>
+  </div>
+</section>
 
 <section id="race-day" style="border-top:none;">
   <div class="wrap">
@@ -535,6 +634,188 @@
       }
     });
   }
+</script>
+
+<script>
+/* ==========================================================================
+   LIVESTREAM: race clock + sponsor banner
+   ----------------------------------------------------------------------------
+   STREAM.youtubeId : the 11-character ID of the scheduled YouTube stream
+                      (the part after watch?v= in its link). Leave '' to show
+                      the "starts on race day" panel instead of a player.
+   STREAM.delaySeconds : how far YouTube runs behind real life. The clock is
+                      held back by this much so it matches what viewers see.
+                      Measure it in the test stream; ~3-5 with Ultra low latency.
+
+   Preview tricks (no code change needed):
+     race-day.html?v=VIDEO_ID       try any YouTube video or stream in the player
+     race-day.html?t=10:57          run the clock as if it's 10:57 AM on race day
+   ========================================================================== */
+var STREAM = {
+  youtubeId: '',
+  delaySeconds: 0
+};
+
+/* Generated from tools/sponsors.json by tools/build_sponsors.py - edit there, not here */
+var LIVE_SPONSORS = [
+  /* LIVE_SPONSORS:START */
+    {"slug": "ultimate-direction", "name": "Ultimate Direction", "href": "https://ultimatedirection.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "horse-and-dragon", "name": "Horse & Dragon Brewing", "href": "https://www.horseanddragonbrewing.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "salty-britches", "name": "Salty Britches", "href": "https://getsaltybritches.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "red-silo-coffee", "name": "Red Silo Coffee Roasters", "href": "https://www.redsilocoffeeroasters.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "quinn-snacks", "name": "Quinn Snacks", "href": "https://www.quinnsnacks.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "plain-am", "name": "Plain AM", "href": "https://www.plain-am.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "bobs-pickle-pops", "name": "Bob's Pickle Pops", "href": "https://bobspicklepops.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "territory-run", "name": "Territory Run Co.", "href": "https://territoryrun.co/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "colorado-compass", "name": "Colorado Compass", "href": "https://colorado-compass.beehiiv.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "natural-groceries", "name": "Natural Grocers", "href": "https://www.naturalgrocers.com/store/golden?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "fastsigns", "name": "FASTSIGNS Lakewood", "href": "https://www.fastsigns.com/lakewood-co/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+    {"slug": "eldorado", "name": "Eldorado Natural Spring Water", "href": "https://www.eldoradosprings.com/?utm_source=bearcreekbackyardultra&utm_medium=livestream&utm_campaign=11th_hour_backyard_ultra&utm_content=stream_banner", "dark": false},
+  /* LIVE_SPONSORS:END */
+];
+
+(function(){
+  var RACE_START = Date.UTC(2026, 9, 31, 14, 0, 0); // Sat Oct 31, 8:00 AM Mountain (MDT, UTC-6)
+  var LOOP_MS = 3600000;
+  var MAX_LOOPS = 11;
+  var RACE_END = RACE_START + MAX_LOOPS * LOOP_MS;   // 7:00 PM: last loop must be done
+  var CORRAL_CALL_S = 180;                           // 3-minute whistle before each start
+  var ROTATE_MS = 8000;
+
+  var params = new URLSearchParams(location.search);
+  var videoId = (params.get('v') || STREAM.youtubeId || '').trim();
+  var delayMs = (Number(STREAM.delaySeconds) || 0) * 1000;
+
+  // Clock source: the website server's time (one quick request), not the viewer's
+  // device clock, which can be off by minutes.
+  var skew = 0;
+  try {
+    fetch(location.pathname + '?clock=' + Date.now(), {method: 'HEAD', cache: 'no-store'}).then(function(r){
+      var d = Date.parse(r.headers.get('Date'));
+      if (!isNaN(d)) skew = d + 500 - Date.now();
+    }).catch(function(){});
+  } catch (e) {}
+
+  // ?t=HH:MM[:SS] preview: pretend it's that time on race day, then run forward
+  var simShift = 0;
+  var tm = (params.get('t') || '').match(/^(\d{1,2}):(\d{2})(?::(\d{2}))?$/);
+  if (tm) {
+    var simAt = Date.UTC(2026, 9, 31, Number(tm[1]) + 6, Number(tm[2]), Number(tm[3] || 0));
+    simShift = simAt - Date.now();
+  }
+  function now(){ return Date.now() + (simShift || skew) - delayMs; }
+
+  var $ = function(id){ return document.getElementById(id); };
+  var elLoop = $('lb-loop'), elNext = $('lb-next'), elNextLabel = $('lb-next-label'),
+      elMain = $('lb-main'), elElapsed = $('lb-elapsed'), elStatus = $('live-status'),
+      elKicker = $('live-kicker'), elLede = $('live-lede');
+
+  function pad(n){ return n < 10 ? '0' + n : '' + n; }
+  function hms(ms){
+    var s = Math.max(0, Math.floor(ms / 1000));
+    return Math.floor(s / 3600) + ':' + pad(Math.floor(s / 60) % 60) + ':' + pad(s % 60);
+  }
+  function countdown(ms){
+    var s = Math.max(0, Math.ceil(ms / 1000));
+    if (s >= 86400) return Math.floor(s / 86400) + 'd ' + Math.floor(s / 3600) % 24 + 'h';
+    if (s >= 3600) return hms(s * 1000);
+    return pad(Math.floor(s / 60)) + ':' + pad(s % 60);
+  }
+  function loopHtml(n){ return n + ' <span class="of">/ ' + MAX_LOOPS + '</span>'; }
+
+  var lastPhase = '';
+  function setPhase(phase){
+    if (phase === lastPhase) return;
+    lastPhase = phase;
+    if (phase === 'before') {
+      elStatus.textContent = 'Livestream · Saturday, October 31';
+    } else if (phase === 'during') {
+      elStatus.textContent = videoId ? 'Live now from Bear Creek Lake Park' : 'Race in progress';
+      elLede.textContent = 'Follow every loop from the start corral at Pelican Point. Runners head out at the top of every hour.';
+    } else {
+      elStatus.textContent = 'Race complete';
+      elLede.textContent = 'That’s a wrap. Thanks for cheering every loop! The full stream replay is below.';
+    }
+    elKicker.classList.toggle('is-live', phase === 'during' && !!videoId);
+  }
+
+  function tick(){
+    var t = now();
+    var warn = false;
+    if (t < RACE_START) {
+      setPhase('before');
+      elLoop.innerHTML = '&mdash;';
+      var toGo = RACE_START - t;
+      warn = toGo <= CORRAL_CALL_S * 1000;
+      elNextLabel.textContent = warn ? 'Corral call · race starts in' : 'Race starts in';
+      elNext.textContent = countdown(toGo);
+      elElapsed.textContent = '0:00:00';
+    } else if (t < RACE_END) {
+      setPhase('during');
+      var k = Math.floor((t - RACE_START) / LOOP_MS);          // 0..10
+      elLoop.innerHTML = loopHtml(k + 1);
+      if (k + 1 < MAX_LOOPS) {
+        var next = RACE_START + (k + 1) * LOOP_MS - t;
+        warn = next <= CORRAL_CALL_S * 1000;
+        elNextLabel.textContent = (warn ? 'Corral call · loop ' : 'Loop ') + (k + 2) + ' starts in';
+        elNext.textContent = countdown(next);
+      } else {
+        elNextLabel.textContent = 'Final loop · course closes in';
+        elNext.textContent = countdown(RACE_END - t);
+      }
+      elElapsed.textContent = hms(t - RACE_START);
+    } else {
+      setPhase('after');
+      elLoop.innerHTML = loopHtml(MAX_LOOPS);
+      elNextLabel.textContent = 'Race complete';
+      elNext.textContent = 'Finished';
+      elElapsed.textContent = hms(RACE_END - RACE_START);
+    }
+    elMain.classList.toggle('warn', warn);
+  }
+  tick();
+  setInterval(tick, 250);
+
+  // ---- Player ----
+  if (/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
+    var box = $('live-video');
+    box.classList.remove('no-stream');
+    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId +
+      '?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1" title="11th Hour Backyard Ultra livestream"' +
+      ' allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    if (window.mixpanel) mixpanel.track('Livestream Loaded', {video_id: videoId});
+  } else {
+    videoId = '';
+  }
+
+  // ---- Sponsor banner ----
+  var link = $('lb-sponsor'), plate = $('lb-plate'), logo = $('lb-logo');
+  var list = LIVE_SPONSORS.slice();
+  if (!list.length) return;
+  list.forEach(function(s){ var i = new Image(); i.src = 'images/sponsors/' + s.slug + '.png'; });
+  var idx = Math.floor(Math.random() * list.length);   // spread first impressions across sponsors
+  function show(s){
+    logo.src = 'images/sponsors/' + s.slug + '.png';
+    logo.alt = s.name;
+    link.href = s.href || 'sponsors.html';
+    link.setAttribute('aria-label', 'Sponsor: ' + s.name);
+    link.dataset.sponsor = s.name;
+    link.dataset.slug = s.slug;
+    plate.classList.toggle('dark', !!s.dark);
+  }
+  show(list[idx]);
+  setInterval(function(){
+    if (document.hidden) return;
+    idx = (idx + 1) % list.length;
+    logo.classList.add('out');
+    setTimeout(function(){ show(list[idx]); logo.classList.remove('out'); }, 450);
+  }, ROTATE_MS);
+  link.addEventListener('click', function(){
+    if (window.mixpanel) {
+      mixpanel.track('Sponsor Click', {sponsor: link.dataset.sponsor, slug: link.dataset.slug, via: 'livestream', page: location.pathname, destination: link.href}, {transport: 'sendBeacon'});
+    }
+  });
+})();
 </script>
 </body>
 </html>

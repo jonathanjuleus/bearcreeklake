@@ -10,9 +10,10 @@ Single source of truth: tools/sponsors.json  (slug, name, url, optional "wide": 
 Run from the repo root after editing it:
     python3 tools/build_sponsors.py
 
-It rewrites two generated regions (between the START/END markers):
+It rewrites three generated regions (between the START/END markers):
   1. the sponsor cards in sponsors.html
   2. the sponsor lookup table in sponsor-redirect.html (powers /go/<slug>)
+  3. the rotating sponsor banner under the livestream in race-day.html
 
 Tracking you get for every sponsor with a url:
   - Mixpanel event "Sponsor Click" {sponsor, slug, via, ...}
@@ -95,6 +96,16 @@ def main():
     red = open("sponsor-redirect.html").read()
     red = replace_between(red, "/* SPONSORS:START */", "      /* SPONSORS:END */", table)
     open("sponsor-redirect.html", "w").write(red)
+
+    live = "".join(
+        "    " + json.dumps({"slug": s["slug"], "name": s["name"],
+                             "href": with_utm(s["url"], "livestream", "stream_banner") if s["url"] else "",
+                             "dark": s.get("tile") == "dark"}) + ",\n"
+        for s in sponsors
+    )
+    rd = open("race-day.html").read()
+    rd = replace_between(rd, "/* LIVE_SPONSORS:START */", "  /* LIVE_SPONSORS:END */", live)
+    open("race-day.html", "w").write(rd)
 
     linked = [s for s in sponsors if s["url"]]
     print(f"{len(sponsors)} sponsors, {len(linked)} with tracked links")
