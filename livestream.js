@@ -14,7 +14,12 @@
 
    Loaded by index.html (the homepage livestream section).
    ========================================================================== */
+/* STREAM.channelId : the channel's ID (starts with UC). Embeds whatever the
+                      channel is streaming right now, so a dropped and restarted
+                      stream keeps working with no site change. Used when
+                      youtubeId is ''. */
 var STREAM = {
+  channelId: '',
   youtubeId: '',
   delaySeconds: 0
 };
@@ -144,15 +149,24 @@ var LIVE_SPONSORS = [
   setInterval(tick, 250);
 
   // ---- Player ----
+  // A specific video ID wins; otherwise the channel's current live stream (survives stream restarts)
+  var channelId = (STREAM.channelId || '').trim();
+  var embedSrc = '';
   if (/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
-    var box = $('live-video');
-    box.classList.remove('no-stream');
-    box.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + videoId +
-      '?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1" title="11th Hour Backyard Ultra livestream"' +
-      ' allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
-    if (window.mixpanel) mixpanel.track('Livestream Loaded', {video_id: videoId});
+    embedSrc = 'https://www.youtube-nocookie.com/embed/' + videoId + '?';
+  } else if (/^UC[A-Za-z0-9_-]{22}$/.test(channelId)) {
+    embedSrc = 'https://www.youtube.com/embed/live_stream?channel=' + channelId + '&';
+    videoId = channelId;
   } else {
     videoId = '';
+  }
+  if (embedSrc) {
+    var box = $('live-video');
+    box.classList.remove('no-stream');
+    box.innerHTML = '<iframe src="' + embedSrc +
+      'autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1" title="11th Hour Backyard Ultra livestream"' +
+      ' allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>';
+    if (window.mixpanel) mixpanel.track('Livestream Loaded', {video_id: videoId});
   }
 
   // ---- Sponsor banner ----
