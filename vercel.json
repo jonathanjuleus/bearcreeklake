@@ -29,6 +29,11 @@
       "source": "/qr-clearcreek",
       "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=clear_creek",
       "permanent": false
+    },
+    {
+      "source": "/live",
+      "destination": "/?utm_source=qr&utm_medium=race_sign&utm_campaign=livestream#live",
+      "permanent": false
     }
   ],
   "rewrites": [
