@@ -20,7 +20,7 @@
                       youtubeId is ''. */
 var STREAM = {
   channelId: '',
-  youtubeId: '',
+  youtubeId: 'AVLGOk8W8vk',
   delaySeconds: 0
 };
 
