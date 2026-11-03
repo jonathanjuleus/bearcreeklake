@@ -2,38 +2,43 @@
   "redirects": [
     {
       "source": "/qr",
-      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=launch_ad",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=flyer&utm_campaign=launch_ad",
       "permanent": false
     },
     {
       "source": "/qr-washpark",
-      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=wash_park",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=wash_park",
       "permanent": false
     },
     {
       "source": "/qr-sloanslake",
-      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=sloans_lake",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=sloans_lake",
       "permanent": false
     },
     {
       "source": "/qr-bearcreek",
-      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=bear_creek",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=bear_creek",
       "permanent": false
     },
     {
       "source": "/qr-citypark",
-      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=city_park",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=city_park",
       "permanent": false
     },
     {
       "source": "/qr-clearcreek",
-      "destination": "/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=clear_creek",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=flyer&utm_campaign=park_flyers&utm_content=clear_creek",
       "permanent": false
     },
     {
       "source": "/live",
-      "destination": "/?utm_source=qr&utm_medium=race_sign&utm_campaign=livestream#live",
+      "destination": "https://yayultra.com/?utm_source=qr&utm_medium=race_sign&utm_campaign=livestream#live",
       "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "destination": "https://yayultra.com/",
+      "permanent": true
     }
   ],
   "rewrites": [
