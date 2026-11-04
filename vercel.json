@@ -36,6 +36,11 @@
       "permanent": false
     },
     {
+      "source": "/",
+      "destination": "https://yayultra.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "destination": "https://yayultra.com/",
       "permanent": true
